@@ -5,7 +5,7 @@
   <div class="row justify-content-center">
       <div class="col-md-8">
           <div class="card">
-              <div class="card-header">{{$contact->name}}</div>
+              <div class="card-header">{{$contact->name}}さんのアカウント内容を編集します。(アイコンとパスワードは未入力の場合は変更されません)</div>
 
               <div class="card-body">
                   <form method="POST" action="/update">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -78,7 +79,7 @@ class UserController extends Controller
         $contact->name=$request->input('name');
         $contact->email=$request->input('email');
         if(!empty($request->input('password'))){
-            $contact->password=$request->input('password');
+            $contact->password=Hash::make($request->input('password'));
         }
         if(!empty($request->input('picture'))){
             $contact->picture=$request->input('picture');
