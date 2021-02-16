@@ -29,3 +29,7 @@ Route::get('/destroy','userController@destroy');
 Route::get('/destroy_confirm',function(){
     return view('destroy_confirm');
 });
+
+//アカウント編集
+Route::get('/edit','UserController@edit');
+Route::post('/update','UserController@update');
