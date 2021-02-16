@@ -33,3 +33,6 @@ Route::get('/destroy_confirm',function(){
 //アカウント編集
 Route::get('/edit','UserController@edit');
 Route::post('/update','UserController@update');
+
+//メイン画面
+Route::get('/main','UserController@index');
