@@ -14,10 +14,18 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/top', function () {
+Route::get('/top',function(){
     return view('top');
 });
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//アカウント削除
+Route::get('/destroy','userController@destroy');
+
+Route::get('/destroy_confirm',function(){
+    return view('destroy_confirm');
+});
