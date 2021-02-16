@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/top',function(){
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/',function(){
     return view('top');
 });
 
