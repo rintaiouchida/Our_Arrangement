@@ -55,9 +55,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
         //
+        $contact=Auth::user();
+        return view('edit',compact('contact'));
     }
 
     /**
@@ -67,9 +69,24 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         //
+        $contact=Auth::user();
+
+
+        $contact->name=$request->input('name');
+        $contact->email=$request->input('email');
+        if(!empty($request->input('password'))){
+            $contact->password=$request->input('password');
+        }
+        if(!empty($request->input('picture'))){
+            $contact->picture=$request->input('picture');
+        }
+        $contact->birthday=$request->input('birthday');
+        
+        $contact->save();
+        return view('/update_confirm',compact('contact'));
     }
 
     /**
@@ -84,10 +101,10 @@ class UserController extends Controller
     {
         //
         $contact=Auth::user();
-
+        $confirm=$contact;
       
       
         $contact->delete();
-        return view('destroy_confirm');
+        return view('destroy_confirm',compact('confirm'));
     }
 }
