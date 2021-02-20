@@ -172,10 +172,10 @@
       </div>
       <div class="myff">
         <div class="follow">
-          <a href="/follow/{{Auth::user()->id}}" style="display:inline-block; text-decoration:none; line-height:11.5vh; color:black;">フォロー:0</a> 
+          <a href="/follow/{{Auth::user()->id}}" style="display:inline-block; text-decoration:none; line-height:11.5vh; color:black;">フォロー:{{$follow}}</a> 
         </div>
         <div class="followed">
-          <a href="/follower/{{Auth::user()->id}}" style="display:inline-block; text-decoration:none; line-height:11.5vh; color:black;">フォロワー:0</a>
+          <a href="/follower/{{Auth::user()->id}}" style="display:inline-block; text-decoration:none; line-height:11.5vh; color:black;">フォロワー:{{$follower}}</a>
         </div>
       </div>
     </div>
