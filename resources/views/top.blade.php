@@ -78,7 +78,12 @@
                 color:#89c3eb;
                 padding:5px;
                 border-radius:5px;
-        
+                box-shadow:2px 5px white;
+            }
+
+            .box:active{
+                box-shadow:none;
+                padding-top:5px;
             }
             
             
