@@ -19,7 +19,22 @@ class UserController extends Controller
     public function index()
     {
         //
-        return view('main');
+        $user=Auth::user();
+        $follow=0;
+        $follower=0;
+
+        $follow_id=$user->follow->pluck('id');
+        $followed_id=$user->followed->pluck('id');
+
+        //dd($follow_id);
+        while(!empty($follow_id[$follow])){
+            $follow++;
+        }
+        while(!empty($followed_id[$follower])){
+            $follower++;
+        }
+
+        return view('main',compact('follow','follower'));
     }
 
     public function follow($id){
