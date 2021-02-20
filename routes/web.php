@@ -36,3 +36,7 @@ Route::post('/update','UserController@update');
 
 //メイン画面
 Route::get('/main','UserController@index');
+
+//フォロワー表示
+Route::get('/follow/{id}','UserController@follow');
+Route::get('/follower/{id}','UserController@follower');
