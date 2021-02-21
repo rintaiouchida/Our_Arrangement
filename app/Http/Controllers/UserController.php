@@ -37,51 +37,7 @@ class UserController extends Controller
         return view('main',compact('follow','follower'));
     }
 
-    public function follow($id){
-
-        $user=User::find($id);
-     
-        $follows['id']=$user->follow->pluck('id');
-        $follows['birthday']=$user->follow->pluck('birthday');
-        $follows['email']=$user->follow->pluck('email');
-        $follows['name']=$user->follow->pluck('name');
-        $follows['picture']=$user->follow->pluck('picture');
-
-        $i=0;
-        while(!empty($follows['id'][$i])){
-            $follow_users[$i]['name']=$follows['name'][$i];
-            $follow_users[$i]['email']=$follows['email'][$i];
-            $follow_users[$i]['birthday']=$follows['birthday'][$i];
-            $follow_users[$i]['picture']=$follows['picture'][$i];
-            $follow_users[$i]['id']=$follows['id'][$i];
-            $i++;
-        }
-        //dd($follow_users);
-        return view('follower',compact('follow_users'));
-    }
-
-    public function follower($id){
-
-        $user=User::find($id);
-     
-        $follows['id']=$user->followed->pluck('id');
-        $follows['birthday']=$user->followed->pluck('birthday');
-        $follows['email']=$user->followed->pluck('email');
-        $follows['name']=$user->followed->pluck('name');
-        $follows['picture']=$user->followed->pluck('picture');
-
-        $i=0;
-        while(!empty($follows['id'][$i])){
-            $follow_users[$i]['name']=$follows['name'][$i];
-            $follow_users[$i]['email']=$follows['email'][$i];
-            $follow_users[$i]['birthday']=$follows['birthday'][$i];
-            $follow_users[$i]['picture']=$follows['picture'][$i];
-            $follow_users[$i]['id']=$follows['id'][$i];
-            $i++;
-        }
-        //dd($follow_users);
-        return view('follower',compact('follow_users'));
-    }
+ 
 
     /**
      * Show the form for creating a new resource.
