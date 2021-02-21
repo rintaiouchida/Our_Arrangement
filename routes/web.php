@@ -38,5 +38,7 @@ Route::post('/update','UserController@update');
 Route::get('/main','UserController@index');
 
 //フォロワー表示
-Route::get('/follow/{id}','UserController@follow');
-Route::get('/follower/{id}','UserController@follower');
+Route::get('/follow/{id}','FollowController@follow');
+Route::get('/follower/{id}','FollowController@follower');
+Route::get('/add_follow/{id}','FollowController@add_follow');
+Route::get('/destroy_follow/{id}','FollowController@destroy_follow');
