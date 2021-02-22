@@ -181,7 +181,7 @@
     </div>
     <div class="clear"></div>
 
-    <div class="post" style="text-align:center; font-size:60px;"><a class="info-btn" href="#">投稿する</a></div>
+    <div class="post" style="text-align:center; font-size:60px;"><a class="info-btn" href="/post">投稿する</a></div>
     
     <div class="search" style="text-align:center; font-size:60px;"><a class="info-btn" href="#">検索する</a></div>
 
