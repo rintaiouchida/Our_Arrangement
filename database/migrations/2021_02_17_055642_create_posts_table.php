@@ -15,10 +15,19 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->unsignedbigInteger('user_id');
+            $table->unsignedbigInteger('genre_id');
+            $table->string('material');
+            $table->string('icon_picture');
+   
+            $table->string('arrange_origin');
+            $table->JSON('tag');
             $table->timestamps();
         });
     }
 
+    
     /**
      * Reverse the migrations.
      *

@@ -42,3 +42,7 @@ Route::get('/follow/{id}','FollowController@follow');
 Route::get('/follower/{id}','FollowController@follower');
 Route::get('/add_follow/{id}','FollowController@add_follow');
 Route::get('/destroy_follow/{id}','FollowController@destroy_follow');
+
+Route::get('/post',function(){
+    return view('post');
+});
