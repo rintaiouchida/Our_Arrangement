@@ -59,6 +59,7 @@ class PostController extends Controller
         }
         else if(isset($request['end'])){
             return view('top');
+            // aaa/
         }
         $id=$step->post_id;
         dd($id);
