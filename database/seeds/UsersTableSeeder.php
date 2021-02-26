@@ -21,7 +21,7 @@ class UsersTableSeeder extends Seeder
                 'birthday'=>'1998-03-11'
             ],
             [
-                'name'=>'田所浩二',
+                'name'=>'ウチダ林太郎',
                 'email'=>'v810b3eed7qzaE05SE@softbank.ne.jp',
                 'password'=>Hash::make('5XZ8LvJU'),
                 'picture'=>'https://uchidamyfirst.s3.ap-northeast-1.amazonaws.com/test/ktJGBUthH6GooHekRJoq0iq4PrbLfo9LHdiUvuvb.jpg',
@@ -37,3 +37,4 @@ class UsersTableSeeder extends Seeder
         ]);
     }
 }
+

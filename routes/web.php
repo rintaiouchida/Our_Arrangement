@@ -43,6 +43,7 @@ Route::get('/follower/{id}','FollowController@follower');
 Route::get('/add_follow/{id}','FollowController@add_follow');
 Route::get('/destroy_follow/{id}','FollowController@destroy_follow');
 
-Route::get('/post',function(){
-    return view('post');
-});
+Route::get('/show','PostController@index');
+Route::get('/post','PostController@post');
+Route::post('/store','PostController@store');
+Route::post('/store_about','PostController@store_about');
