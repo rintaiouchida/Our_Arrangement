@@ -16,4 +16,5 @@ class Post extends Model
     public function step(){
         return $this->HasMany(Step::class);
     }
+    
 }

@@ -28,7 +28,7 @@ class PostController extends Controller
         $path=Storage::disk('s3')->putFile('/test', $request['picture'], 'public');
         $post->name=$request['name'];
         $post->user_id=Auth::id();
-        $post->genre_id=2;
+        $post->genre_id=$request['genre'];
         $post->material=$request['material'];
         $post->icon_picture=Storage::disk('s3')->url($path);
       
