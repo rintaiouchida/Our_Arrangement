@@ -7,4 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Genre extends Model
 {
     //
+    public function post(){
+        return $this->belongsTo(Post::class);
+    }
 }

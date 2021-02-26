@@ -48,7 +48,7 @@
                             <div class="col-md-6">
                                 <textarea id="material"  class="form-control @error('material') is-invalid @enderror" name="material" value="{{ old('material') }}" required autocomplete="material" autofocus></textarea>
 
-                                @error('name')
+                                @error('material')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -64,7 +64,7 @@
                             <div class="col-md-6">
                                 <input id="arrange_origin" type="text" class="form-control @error('arrange_origin') is-invalid @enderror" name="arrange_origin" value="{{ old('arrange_origin') }}" required autocomplete="arrange_origin" autofocus>
 
-                                @error('name')
+                                @error('arrange_origin')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -72,6 +72,28 @@
                             </div>
                         </div>
                         <!-- アレンジ元設定(ここまで) -->
+
+                        <!-- ジャンル設定 -->
+                        <div class="form-group row">
+                            <label for="selectA" class="col-md-4 col-form-label text-md-right">{{ __('ジャンル') }}</label>
+                            <div class="col-md-6">
+                                <select id="selectA" class="form-control" name="genre">
+                                    <option >選択してください</option>
+                                    <option name="genre" value="1">ご飯もの</option>
+                                    <option name="genre" value="2">麺類</option>
+                                    <option name="genre" value="3">揚げ物</option>
+                                    <option name="genre" value="4">スープ</option>
+                                    <option name="genre" value="5">デザート</option>
+                                </select>
+                                    @error('selectA')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                            </div>
+                           
+                        </div>
+                        <!-- ジャンル設定(ここまで) -->
                
                         
 
