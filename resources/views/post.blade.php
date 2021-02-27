@@ -77,13 +77,13 @@
                         <div class="form-group row">
                             <label for="selectA" class="col-md-4 col-form-label text-md-right">{{ __('ジャンル') }}</label>
                             <div class="col-md-6">
-                                <select id="selectA" class="form-control" name="genre">
+                                <select id="selectA" class="form-control"  name="genre" >
                                     <option >選択してください</option>
-                                    <option name="genre" value="1">ご飯もの</option>
-                                    <option name="genre" value="2">麺類</option>
-                                    <option name="genre" value="3">揚げ物</option>
-                                    <option name="genre" value="4">スープ</option>
-                                    <option name="genre" value="5">デザート</option>
+                                    <option  value="1">ご飯もの</option>
+                                    <option value="2">麺類</option>
+                                    <option  value="3">揚げ物</option>
+                                    <option  value="4">スープ</option>
+                                    <option  value="5">デザート</option>
                                 </select>
                                     @error('selectA')
                                         <span class="invalid-feedback" role="alert">
@@ -103,7 +103,7 @@
                                 <button type="submit" class="btn btn-primary col-md-3">
                                     {{ __('登録') }}
                                 </button>
-                                <a class="btn btn-danger col-md-3 offset-md-3" href="/">戻る</a>
+                                <a class="btn btn-danger col-md-3 offset-md-3" href="/main">戻る</a>
                             </div>
                         </div>
                     </form>

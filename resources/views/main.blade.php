@@ -4,30 +4,72 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <style>
     
     .container{
       margin:0;
       background-color:#e2dbc6;
       text-align:center;
-      height:1000px;
       width:100vw;
-      position:relative;
       
     }
-
     .btn{
+      position:relative;
+    }
+    .btn>button{
       position:fixed;
       top:0;
       left:0;
       z-index:1;
     }
-    .btn > span{
+    button > span{
       background-color:black;
       width:30px;
       height:5px;
       display:block;
       margin-bottom:5px;
+    }
+    .btn2{
+      position:relative;
+    }
+
+    .btn2>a{
+      position:fixed;
+      top:0;
+      right:0;
+      z-index:1;
+    }
+
+    .main{
+      background-color:pink;
+      margin-top:100px;
+    
+    }
+
+    .box{
+      height:500px;
+      display:inline-block;
+      margin-bottom:50px;
+      position:relative;
+    }
+
+    .box>img{
+      border:5px solid white;
+    }
+   
+
+    .title{
+      position:absolute;
+      left:20px;
+      right:20px;
+      bottom:5px;
+      color:red;
+      background-color:yellow;
+     
+      font-size:30px;
+      opacity:0.8;
     }
 
     .clear{
@@ -37,7 +79,6 @@
    /* メイン画面②の設計 */
     .container2{
       background-color:#f0ece8;
-      
       height:100vh;
       width:60vw;
       position:fixed;
@@ -148,17 +189,34 @@
     
   </style>
 </head>
-<body style="margin:0; position:relative;">
-  <div class="container">
-    <button class="btn" id="btn">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+<body>
+<!-- style="margin:0; position:relative;" -->
+  <div class="container col-md-12">
+    <div class="btn">
+      <button  id="btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="btn2">
+      <a class="btn btn-primary" href="#jump">ページのTopへ</a>
+    </div>
+    <div class="top" id="jump">メイン画面</top>
+    <div class="main col-md-12">
+      @foreach($posts as $post)
+      <a href="{{$post->id}}" class="box col-md-5 ">
+      <img src="{{$post->icon_picture}}" style="width:100%; height:100%;display:block;"></img>
+      <div class="title">タイトル:{{$post->name}}<br>作成日時:{{$post->created_at}}</div>
+      
+      </a>
+      
+      @endforeach
+      
+      
+    </div>
     
     
-
-    以下にフォローしている人の投稿を掲載
   </div>
   <div class="container2" id="container2">
     <header></header>
