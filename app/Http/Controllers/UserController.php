@@ -44,25 +44,33 @@ class UserController extends Controller
         $user=User::find(Auth::id());
         $follows2=$user->follow;
         foreach($follows2 as $follow2){
-            $follow_id[$i]=$follow2->id;
+            $follow_id2[$i]=$follow2->id;
             $i++;
         }$i=0;
         
-
-       $all_post=Post::all();
-       $all_post=$all_post->sortByDesc('id');
-       //dd($all_post);
+        $all_posts=Post::all();
+      
+        $all_post=$all_posts->sortByDesc('id');
+       //dd($posts);
+       
        
        foreach($all_post as $one_post){
-        foreach($follow_id as $one_id){
+        foreach($follow_id2 as $one_id){
             if($one_post->user_id===$one_id){
                 $posts[$i]=$one_post;
                 $i++;
             }
         }
        }
+       if(empty($posts)){
+           $posts=null;
+       }
+       
+       //dd($posts);
+       
        //dd($posts);
         //フォローしている人の投稿を取得(ここまで)
+      
 
         return view('main',compact('follow','follower','posts'));
     }

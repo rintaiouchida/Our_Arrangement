@@ -204,14 +204,15 @@
     </div>
     <div class="top" id="jump">メイン画面</top>
     <div class="main col-md-12">
+      @if(!empty($posts))
       @foreach($posts as $post)
-      <a href="{{$post->id}}" class="box col-md-5 ">
+      <a href="menu/{{$post->id}}" class="box col-md-5 ">
       <img src="{{$post->icon_picture}}" style="width:100%; height:100%;display:block;"></img>
       <div class="title">タイトル:{{$post->name}}<br>作成日時:{{$post->created_at}}</div>
       
       </a>
-      
       @endforeach
+      @endif
       
       
     </div>
