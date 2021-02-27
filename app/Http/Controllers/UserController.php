@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\Follow;
+use App\Models\Post;
 use App\Http\Requests\User\UpdateRequest;
 
 class UserController extends Controller
@@ -20,6 +22,7 @@ class UserController extends Controller
     {
         //
         $user=Auth::user();
+        // フォロー、フォロワーの数を取得
         $follow=0;
         $follower=0;
 
@@ -33,8 +36,35 @@ class UserController extends Controller
         while(!empty($followed_id[$follower])){
             $follower++;
         }
+        //フォロー、フォロワーの数を取得(ここまで)
 
-        return view('main',compact('follow','follower'));
+
+        //フォローしている人の投稿を取得
+        $i=0;
+        $user=User::find(Auth::id());
+        $follows2=$user->follow;
+        foreach($follows2 as $follow2){
+            $follow_id[$i]=$follow2->id;
+            $i++;
+        }$i=0;
+        
+
+       $all_post=Post::all();
+       $all_post=$all_post->sortByDesc('id');
+       //dd($all_post);
+       
+       foreach($all_post as $one_post){
+        foreach($follow_id as $one_id){
+            if($one_post->user_id===$one_id){
+                $posts[$i]=$one_post;
+                $i++;
+            }
+        }
+       }
+       //dd($posts);
+        //フォローしている人の投稿を取得(ここまで)
+
+        return view('main',compact('follow','follower','posts'));
     }
 
  

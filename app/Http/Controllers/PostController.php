@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Step;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
@@ -12,10 +13,19 @@ class PostController extends Controller
 {
     //
     public function index(){
-        $post=Post::find(1);
-        $steps=$post->step;
-        $maker=$post->user->name;
-        return view('show',compact('steps','maker'));
+        $i=0;
+        $user=User::find(Auth::id());
+        $follows=$user->follow;
+        foreach($follows as $follow){
+            $arrs[$i]=$follow->id;
+            $i++;
+        }$i=0;
+        $post=Post::find($arrs);
+     
+
+      
+      
+       return view('show',compact('post'));
     }
 
     public function post(){
@@ -63,5 +73,9 @@ class PostController extends Controller
         }
         $id=$step->post_id;
         dd($id);
+    }
+
+    public function show($id){
+
     }
 }
