@@ -47,3 +47,5 @@ Route::get('/show','PostController@index');
 Route::get('/post','PostController@post');
 Route::post('/store','PostController@store');
 Route::post('/store_about','PostController@store_about');
+
+
