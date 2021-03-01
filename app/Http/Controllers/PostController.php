@@ -78,6 +78,6 @@ class PostController extends Controller
     public function show($id){
         $post=Post::find($id);
         $steps=$post->step;
-        return view('show',compact('steps'));
+        return view('show_about',compact('steps','post'));
     }
 }
