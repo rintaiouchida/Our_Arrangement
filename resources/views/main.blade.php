@@ -43,7 +43,7 @@
     }
 
     .main{
-      background-color:pink;
+      /* background-color:pink; */
       margin-top:100px;
     
     }
@@ -242,7 +242,7 @@
 
     <div class="post" style="text-align:center; font-size:60px;"><a class="info-btn" href="/post">投稿する</a></div>
     
-    <div class="search" style="text-align:center; font-size:60px;"><a class="info-btn" href="#">検索する</a></div>
+    <div class="search" style="text-align:center; font-size:60px;"><a class="info-btn" href="/search">検索する</a></div>
 
     <div class="rank" style="text-align:center; font-size:60px;"><a class="info-btn" href="#" >ランキング</a></div>
 
