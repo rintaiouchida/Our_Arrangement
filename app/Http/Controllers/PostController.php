@@ -8,6 +8,7 @@ use App\Models\Step;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -79,5 +80,27 @@ class PostController extends Controller
         $post=Post::find($id);
         $steps=$post->step;
         return view('show_about',compact('steps','post'));
+    }
+
+    public function show_search(Request $request){
+
+        $query=DB::table('posts');
+
+        $count=0;
+        $search=$request->input('name');
+        $search_split=mb_convert_kana($search,'s');
+        $search_split2=preg_split('/[\s]+/',$search_split,-1,PREG_SPLIT_NO_EMPTY);
+
+        foreach($search_split2 as $value){
+            $query->where('name','like','%'.$value.'%');
+        }
+
+        $query->orderBy('created_at','asc');
+        $contacts=$query->paginate(20);
+        foreach($contacts as $contact){
+            $count++;
+        }
+        return view('show_search',compact('contacts','search','count'));
+        
     }
 }
