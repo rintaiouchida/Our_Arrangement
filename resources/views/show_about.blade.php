@@ -37,7 +37,7 @@
   <!-- container(ここから) -->
   <div class="container">
     <div class="title">
-      <h1>タイトル:{{$post->name}}</h1>
+      <h1>タイトル:{{$post->name}} created by<a href="/show/{{$post->user->id}}">{{$post->user->name}}</a></h1>
     </div>
 
     <div class="card" style="margin-bottom:100px;">
@@ -55,10 +55,12 @@
       <div class="card-body" style="line-height:200px;">
       {{$step->about}}
       <img src="{{$step->picture}}" style="height:200px; width:200px;float:right;">
+      
       <div class="clear"></div>
       </div>
     </div>
     @endforeach
+    <a href="#" class="btn" style="background-color:white; border:1px solid black;">参考になった👍</a>
   </div>
   <!-- container(ここまで) -->
 </body>
