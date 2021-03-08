@@ -36,10 +36,11 @@
 <body>
   <!-- container(ここから) -->
   <div class="container">
-    <div class="title">
+    <div class="title" style="margin-bottom:50px;">
       <h1>タイトル:{{$post->name}} created by<a href="/show/{{$post->user->id}}">{{$post->user->name}}</a></h1>
     </div>
 
+    <a href="/like_list/{{$post->id}}" style="text-align:left; display:block; text-decoration:none; margin-bottom:15px; font-size:20px;">いいね一覧</a>
     <div class="card" style="margin-bottom:100px;">
       <div class="card-header">材料</div>
       <div class="card-body" style="text-align:left;">
@@ -60,7 +61,13 @@
       </div>
     </div>
     @endforeach
-    <a href="#" class="btn" style="background-color:white; border:1px solid black;">参考になった👍</a>
+
+    @if(Auth::user()->like->contains($post->id))
+      <a href="/dislike/{{$post->id}}"class="btn btn-primary">参考になった👍</a>
+    @else
+      <a href="/like/{{$post->id}}" class="btn" style="background-color:white; color:black; border:1px solid black;">参考になった👍</a>
+    @endif
+
   </div>
   <!-- container(ここまで) -->
 </body>
