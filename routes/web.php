@@ -56,4 +56,9 @@ Route::get('/show_search','PostController@show_search');
 
 Route::get('/show/{id}','UserController@aaa');
 
+Route::get('/like/{id}','LikeController@create');
+Route::get('/dislike/{id}','LikeController@destroy');
+
+Route::get('/like_list/{id}','LikeController@show');
+
 
