@@ -52,5 +52,8 @@ Route::get('/menu/{id}','PostController@show');
 Route::get('/search',function(){
     return view('search');
 });
+Route::get('/show_search','PostController@show_search');
+
+Route::get('/show/{id}','UserController@aaa');
 
 
