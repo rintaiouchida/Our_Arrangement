@@ -100,7 +100,7 @@
   <main>
     @foreach($followers as $follower)
     <div class="menu2 col-md-12">
-      <div class="pic col-md-2"><a href="/main/{{$follower->id}}"><img src="{{$follower->picture}}" style="display:inline-block; line-height:200px; height:190px; width:190px; border-radius:10%; float:left; border:3px solid white;"></a></div>
+      <div class="pic col-md-2"><a href="/show/{{$follower->id}}"><img src="{{$follower->picture}}" style="display:inline-block; line-height:200px; height:190px; width:190px; border-radius:10%; float:left; border:3px solid white;"></a></div>
       <h1 class="name col-md-6 ">{{$follower->name}}</h1>
       
       @if(Auth::user()->follow->contains($follower->id))
