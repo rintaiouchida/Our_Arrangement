@@ -1,10 +1,6 @@
-@foreach($steps as $step)
+{{$user->id}}<br>
+{{$user->name}}<br>
+{{$user->birthday}}<br>
+{{$user->picture}}<br>
 
-{{$step->step_num}}<br>
-{{$step->title}}<br>
-{{$step->about}}<br>
-@endforeach
-
-
-
-<!-- git commit確認 -->
+<a href="/main">戻る</a>
