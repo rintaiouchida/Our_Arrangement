@@ -75,6 +75,12 @@ class UserController extends Controller
         return view('main',compact('follow','follower','posts'));
     }
 
+    public function aaa($id){
+        $user=User::find($id);
+        return view('show_account',compact('user'));
+      
+    }
+
  
 
     /**

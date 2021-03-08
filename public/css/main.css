@@ -1,0 +1,175 @@
+.container{
+  margin:0;
+  background-color:#e2dbc6;
+  text-align:center;
+  width:100vw;
+}
+.btn{
+  position:relative;
+}
+.btn>button{
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:1;
+}
+button > span{
+  background-color:black;
+  width:30px;
+  height:5px;
+  display:block;
+  margin-bottom:5px;
+}
+.btn2{
+  position:relative;
+}
+
+.btn2>a{
+  position:fixed;
+  top:0;
+  right:0;
+  z-index:1;
+}
+
+.main{
+  
+  margin-top:100px;
+
+}
+
+.box{
+  height:500px;
+  display:inline-block;
+  margin-bottom:50px;
+  position:relative;
+}
+
+.box>img{
+  border:5px solid white;
+}
+
+
+.title{
+  position:absolute;
+  left:20px;
+  right:20px;
+  bottom:5px;
+  color:red;
+  background-color:yellow;
+ 
+  font-size:30px;
+  opacity:0.8;
+}
+
+.clear{
+  clear:both;
+}
+
+
+.container2{
+  background-color:#f0ece8;
+  height:100vh;
+  width:60vw;
+  position:fixed;
+  top:0;
+  left:-60vw;
+  
+}
+header{
+  height:7%;
+}
+
+.myface{
+  height:23%;
+  
+  width:20%;
+  float:left;
+}
+.myinfo{
+  width:80%;
+  height:23%;
+  float:left;
+}
+.myname{
+ 
+  width:100%;
+  height:50%;
+  text-align:center;
+  line-height:11.5vh;
+  font-size:40px;
+}
+.myff{
+  
+  width:85%;
+  height:50%;
+  float:right;
+}
+.follow{
+
+  float:left;
+  width:50%;
+  height:100%;
+  text-align:center;
+  font-size:25px;
+}
+.follow >a:hover{
+  color:pink;
+}
+.followed{
+  
+  float:left;
+  width:50%;
+  height:100%;
+  text-align:center;
+  font-size:25px;
+}
+
+.post{
+  height:14%;
+}
+.post:active{
+  color:red;
+}
+.search{
+  height:14%;
+  
+}
+.rank{
+  height:14%;
+  
+}
+.delete{
+  height:14%;
+  
+}
+.logout{
+  height:14%;
+}
+
+
+.info-btn{
+  display:block;
+  text-decoration:none; 
+  line-height:14vh;
+  background-color:#f0ece8;
+  border-top:5px solid #89c3eb;
+  color:#89c3eb;
+  text-shadow:3px 3px white;
+}
+.info-btn:hover{
+  background-color:white;
+}
+.info-btn:active{
+  color:red;
+}
+
+
+
+.active{
+  transform:translateX(60vw);
+  transition:1s;
+}
+.nonactive{
+  transform:translateX(0);
+  transition:1s;
+}
