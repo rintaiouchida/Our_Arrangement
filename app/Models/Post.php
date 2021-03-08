@@ -16,5 +16,9 @@ class Post extends Model
     public function step(){
         return $this->HasMany(Step::class);
     }
+
+    public function like(){
+        return $this->belongsToMany(User::class,'likes','post_id','user_id');
+    }
     
 }
