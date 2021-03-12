@@ -55,10 +55,12 @@ class UserController extends Controller
        
        
        foreach($all_post as $one_post){
-        foreach($follow_id2 as $one_id){
-            if($one_post->user_id===$one_id){
-                $posts[$i]=$one_post;
-                $i++;
+        if(!empty($follow_id2)){
+            foreach($follow_id2 as $one_id){
+                if($one_post->user_id===$one_id){
+                    $posts[$i]=$one_post;
+                    $i++;
+                }
             }
         }
        }

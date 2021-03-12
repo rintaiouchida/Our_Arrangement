@@ -36,12 +36,18 @@ class PostController extends Controller
     public function store(Request $request){
         $post =new Post;
         
-        $path=Storage::disk('s3')->putFile('/test', $request['picture'], 'public');
+        if(!empty($request['picture'])){
+            $path=Storage::disk('s3')->putFile('/test', $request['picture'], 'public');
+            $picture=Storage::disk('s3')->url($path);
+        }
+        else{
+            $picture=null;
+        }
         $post->name=$request['name'];
         $post->user_id=Auth::id();
         $post->genre_id=$request['genre'];
         $post->material=$request['material'];
-        $post->icon_picture=Storage::disk('s3')->url($path);
+        $post->icon_picture=$picture;
       
         $post->arrange_origin=$request['arrange_origin'];
         $post->save();
@@ -57,9 +63,15 @@ class PostController extends Controller
         $step->post_id=$request['id'];
         $step->step_num=$request['step_num'];
         $step->title=$request['name'];
-        $step->about=$request['about'];      
-        $path=Storage::disk('s3')->putFile('/test', $request['picture'], 'public');
-        $step->picture=Storage::disk('s3')->url($path);
+        $step->about=$request['about'];
+        if(!empty($request['picture'])){
+            $path=Storage::disk('s3')->putFile('/test', $request['picture'], 'public');
+            $picture=Storage::disk('s3')->url($path);
+        }      
+        else{
+            $picture=null;
+        }
+        $step->picture=$picture;
         $step->save();
 
         if(isset($request['next'])){
