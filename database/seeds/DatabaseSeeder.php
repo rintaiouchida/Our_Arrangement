@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             PostsTableSeeder::class,
             StepsTableSeeder::class,
             GenresTableSeeder::class,
+            LikesTableSeeder::class,
         ]);
     }
 }
