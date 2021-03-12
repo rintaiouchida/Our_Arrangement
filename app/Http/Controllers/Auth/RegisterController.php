@@ -29,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/main';
 
     /**
      * Create a new controller instance.
@@ -66,14 +66,21 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $image=$data['picture'];
-        $path=Storage::disk('s3')->putFile('/test', $data['picture'], 'public');
-
+     
+        if(!empty($data['picture'])){
+            $path=Storage::disk('s3')->putFile('/test', $data['picture'], 'public');
+            $picture=Storage::disk('s3')->url($path);
+        }
+        else{
+            $picture=null;
+        }
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            
             'password' => Hash::make($data['password']),
-            'picture'=>Storage::disk('s3')->url($path),
+            
+            'picture'=>$picture,
             'birthday'=>$data['birthday'],
         ]);
     }
