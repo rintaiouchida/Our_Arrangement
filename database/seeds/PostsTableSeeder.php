@@ -16,7 +16,7 @@ class PostsTableSeeder extends Seeder
 
        
         DB::table('posts')->insert([
-            ['name'=>'野獣先輩',
+            ['name'=>'麻婆豆腐',
             'user_id'=>3,
             'genre_id'=>3,
             'material'=>'豆腐',

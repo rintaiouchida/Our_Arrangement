@@ -64,7 +64,7 @@
     
     <div class="search" style="text-align:center; font-size:60px;"><a class="info-btn" href="/search">検索する</a></div>
 
-    <div class="rank" style="text-align:center; font-size:60px;"><a class="info-btn" href="#" >ランキング</a></div>
+    <div class="rank" style="text-align:center; font-size:60px;"><a class="info-btn" href="/rank" >ランキング</a></div>
 
     <div class="delete" style="text-align:center; font-size:60px;"><a class="info-btn" href="/destroy">削除</a></div>
 
