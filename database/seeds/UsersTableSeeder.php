@@ -32,8 +32,29 @@ class UsersTableSeeder extends Seeder
                 'email'=>'v79b3eed7qzaE05SE@softbank.ne.jp',
                 'password'=>Hash::make('5XZ8LvJU'),
                 'picture'=>'https://uchidamyfirst.s3.ap-northeast-1.amazonaws.com/test/ysaNymxYeCloZXpBAKVM1UIlhZC5ts6rP07dKGWJ.jpg',
-                'birthday'=>'1998-03-11'
-            ]
+                'birthday'=>'2007-03-11'
+            ],
+            [
+                'name'=>'山田太郎',
+                'email'=>'v001b3eed7qzaE05SE@softbank.ne.jp',
+                'password'=>Hash::make('5XZ8LvJU'),
+                'picture'=>'https://uchidamyfirst.s3.ap-northeast-1.amazonaws.com/test/ysaNymxYeCloZXpBAKVM1UIlhZC5ts6rP07dKGWJ.jpg',
+                'birthday'=>'1980-03-11'
+            ],
+            [
+                'name'=>'鈴木一郎',
+                'email'=>'v002b3eed7qzaE05SE@softbank.ne.jp',
+                'password'=>Hash::make('5XZ8LvJU'),
+                'picture'=>'https://uchidamyfirst.s3.ap-northeast-1.amazonaws.com/test/ysaNymxYeCloZXpBAKVM1UIlhZC5ts6rP07dKGWJ.jpg',
+                'birthday'=>'1990-03-11'
+            ],
+            [
+                'name'=>'佐藤あつし',
+                'email'=>'v003b3eed7qzaE05SE@softbank.ne.jp',
+                'password'=>Hash::make('5XZ8LvJU'),
+                'picture'=>'https://uchidamyfirst.s3.ap-northeast-1.amazonaws.com/test/ysaNymxYeCloZXpBAKVM1UIlhZC5ts6rP07dKGWJ.jpg',
+                'birthday'=>'1960-03-11'
+            ],
         ]);
     }
 }
