@@ -19,7 +19,7 @@ class CreateStepsTable extends Migration
             $table->Integer('step_num');
             $table->string('title');
             $table->string('about');
-            $table->string('picture');
+            $table->string('picture')->nullable();
             $table->timestamps();
         });
     }
