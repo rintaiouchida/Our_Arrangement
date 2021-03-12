@@ -31,7 +31,7 @@
                             <label for="picture" class="col-md-4 col-form-label text-md-right">{{ __('アイコン') }}</label>
 
                             <div class="col-md-6">
-                                <input id="picture" type="file" class="form-control-file @error('picture') is-invalid @enderror" name="picture" value="{{ old('picture') }}" required autocomplete="picture" accept=".png, .jpg, .jpeg, .pdf, .doc">
+                                <input id="picture" type="file" class="form-control-file @error('picture') is-invalid @enderror" name="picture" value="{{ old('picture') }}"  autocomplete="picture" accept=".png, .jpg, .jpeg, .pdf, .doc">
                                 @error('picture')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
