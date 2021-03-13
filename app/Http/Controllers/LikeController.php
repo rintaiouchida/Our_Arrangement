@@ -45,14 +45,15 @@ class LikeController extends Controller
         
         $count=0;
         $rank_num=1;
-        $flies=Post::where('genre_id',$id)->get();
-        foreach($flies as $fly){
-            $fly->like_count=$count;
-            foreach($fly->like as $like){
-                $fly->like_count++;
+        $genres=Post::where('genre_id',$id)->get();
+        foreach($genres as $genre){
+            $genre->like_count=$count;
+            foreach($genre->like as $like){
+                $genre->like_count++;
             }$count=0;
         }
-        $ranks=$flies->sortByDesc('like_count');
+        $ranks=$genres->sortByDesc('like_count');
+
        
         return view('show_genre_rank',compact('ranks','rank_num'));
     }
