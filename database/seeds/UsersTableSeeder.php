@@ -33,7 +33,6 @@ class UsersTableSeeder extends Seeder
                 'password'=>Hash::make('5XZ8LvJU'),
                 'picture'=>'https://uchidamyfirst.s3.ap-northeast-1.amazonaws.com/test/ysaNymxYeCloZXpBAKVM1UIlhZC5ts6rP07dKGWJ.jpg',
                 'birthday'=>'2007-03-11'
-                
             ],
             [
                 'name'=>'山田太郎',
