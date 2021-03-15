@@ -6,7 +6,6 @@
   <title>Document</title>
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
   <style>
   
 
@@ -40,27 +39,36 @@
       background-color:#e2dbc6;
       margin-bottom:20px;
       background-color:#c1e4e9;
+      width:100vw;
     }
     
     .pic{
-      /* background-color:pink; */
+     
       height:200px;
-      float:left;
+     
+
       margin-top:5px;
     }
 
     img{
       border-radius:1px solid black;
+      display:inline-block; 
+      line-height:200px; 
+      height:190px; 
+      width:190px; 
+      border-radius:10%;
+     
+
+      border:3px solid white;
     }
 
     
     .name{
       height:100px;
-      float:left;
       margin:50px 0;
-      /* background-color:red; */
       line-height:100px;
       text-align:center;
+      font-size:40px;
     }
 
     .info{
@@ -69,10 +77,9 @@
     }
 
     .btn_follow{
-      float:right;
-      display:inline-block;
       height:40px;
       margin:80px 0;
+      float:right;
     }
 
     .btn_back{
@@ -86,12 +93,44 @@
       width:100%;
       background-color:white;
     }
+    @media screen and (max-width:540px){
+      .title{
+        font-size:20px;
+      }
+      .menu2{
+        height:100px;
+      }
+      .pic{
+        height:100px;
+      }
+      .pic>a>img{
+        width:100px;
+        height:95px;
+      }
+      .name{
+        font-size:10px;
+      }
+
+      .name{
+        height:50px;
+        margin:25px 0;
+        font-size:20px;
+        line-height:50px;
+        text-align:center;
+     }
+
+        .btn_follow{
+          margin:30px 0;
+          font-size:10px;
+          line-height:30px;
+      }
+    }
     
   </style>
 </head>
 <body>
   <header>
-  <div class="top col-md-12">
+  <div class="top col-md-12 col-sm-12 col-xs-12">
   <a href="/main" class="btn btn-primary btn_back">戻る</a>
   <span class="col-md-4 offset-2 title">フォローリスト</span>
   </div>
@@ -100,15 +139,19 @@
 
   <main>
     @foreach($follows as $follow)
-    <div class="menu2 col-md-12">
-      <div class="pic col-md-2"><a href="/show/{{$follow->id}}"><img src="{{$follow->picture}}" style="display:inline-block; line-height:200px; height:190px; width:190px; border-radius:10%; float:left; border:3px solid white;"></a></div>
-      <h1 class="name col-md-6 ">{{$follow->name}}</h1>
+    <div class="menu2 row col-sm-12 col-12" >
+      <div class="pic col-sm-3 col-3" ><a href="/show/{{$follow->id}}"><img src="{{$follow->picture}}" >
+      </a>
+      </div>
+      <p class="name col-sm-6  col-6" >{{$follow->name}}</p>
       
+      <div class="col-sm-3 col-3" >
       @if(Auth::user()->follow->contains($follow->id))
       <a href="/destroy_follow/{{$follow->id}}" class="btn btn-danger btn_follow">フォロー解除</a>
       @else
       <a href="/add_follow/{{$follow->id}}" class="btn btn-primary btn_follow">フォローする</a>
       @endif
+      </div>
       
     </div>
 

@@ -126,9 +126,7 @@ header{
   text-align:center; 
   font-size:60px;
 }
-.post:active{
-  color:red;
-}
+
 .search{
   height:14%;
   text-align:center; 
@@ -179,7 +177,7 @@ header{
 }
 
 /*スマホ用*/
-@media screen and (max-width:600px){
+@media screen and (max-width:540px){
   /*メイン画面2のスライド*/
   .container2{
     background-color:#f0ece8;
@@ -219,6 +217,10 @@ header{
   .myname{
     font-size:30px;
   }
+  .myff{
+    float:none;
+    width:100%;
+  }
   .follow{
     font-size:20px;
   }
@@ -228,6 +230,10 @@ header{
   .post,.search,.rank,.delete,.logout{
     height:12%;
     font-size:40px;
+  }
+
+  .info-btn{
+    line-height:12vh;
   }
   /* メイン画面デザインここまで */
 }
