@@ -42,7 +42,7 @@
   <div class="container2" id="container2">
     <header></header>
     <div class="myface">
-      <img src="{{Auth::user()->picture}}" style="border:5px solid white; display:inline-block;width:80%;height:90%; border-radius:20%;">
+      <img src="{{Auth::user()->picture}}" style="border:5px solid white; display:inline-block;width:100%;height:90%; border-radius:20%;">
      
     </div>
     <div class="myinfo">
@@ -60,15 +60,15 @@
     </div>
     <div class="clear"></div>
 
-    <div class="post" style="text-align:center; font-size:60px;"><a class="info-btn" href="/post">投稿する</a></div>
+    <div class="post" ><a class="info-btn" href="/post">投稿する</a></div>
     
-    <div class="search" style="text-align:center; font-size:60px;"><a class="info-btn" href="/search">検索する</a></div>
+    <div class="search"><a class="info-btn" href="/search">検索する</a></div>
 
-    <div class="rank" style="text-align:center; font-size:60px;"><a class="info-btn" href="/rank" >ランキング</a></div>
+    <div class="rank" ><a class="info-btn" href="/rank" >ランキング</a></div>
 
-    <div class="delete" style="text-align:center; font-size:60px;"><a class="info-btn" href="/destroy">削除</a></div>
+    <div class="delete"><a class="info-btn" href="/destroy">削除</a></div>
 
-    <div class="logout" style="text-align:center; font-size:60px;">
+    <div class="logout">
       <a class="info-btn" href="{{ route('logout') }}"
         onclick="event.preventDefault();
         document.getElementById('logout-form').submit();" >ログアウト

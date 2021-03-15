@@ -2,7 +2,7 @@
   margin:0;
   background-color:#e2dbc6;
   text-align:center;
-  width:100vw;
+  width:100%;
 }
 .btn{
   position:relative;
@@ -69,11 +69,11 @@ button > span{
 .container2{
   background-color:#f0ece8;
   height:100vh;
-  width:60vw;
+  width:60%;
   position:fixed;
   top:0;
   z-index:2;
-  left:-60vw;
+  left:-60%;
 }
 header{
   height:7%;
@@ -81,13 +81,12 @@ header{
 
 .myface{
   height:23%;
-  
   width:20%;
   float:left;
 }
 .myinfo{
   width:80%;
-  height:23%;
+  height:20%;
   float:left;
 }
 .myname{
@@ -124,24 +123,31 @@ header{
 
 .post{
   height:14%;
+  text-align:center; 
+  font-size:60px;
 }
 .post:active{
   color:red;
 }
 .search{
   height:14%;
-  
+  text-align:center; 
+  font-size:60px;
 }
 .rank{
   height:14%;
-  
+  text-align:center; 
+  font-size:60px;
 }
 .delete{
   height:14%;
-  
+  text-align:center; 
+  font-size:60px;
 }
 .logout{
   height:14%;
+  text-align:center; 
+  font-size:60px;
 }
 
 
@@ -164,7 +170,7 @@ header{
 
 
 .active{
-  transform:translateX(60vw);
+  transform:translateX(100%);
   transition:0.5s;
 }
 .nonactive{
@@ -177,15 +183,15 @@ header{
   /*メイン画面2のスライド*/
   .container2{
     background-color:#f0ece8;
-    height:100vh;
-    width:100vw;
+    height:100%;
+    width:100%;
     position:fixed;
     top:0;
-    left:-100vw;
+    left:-100%;
   }
 
   .active{
-    transform:translateX(100vw);
+    transform:translateX(100%);
     transition:0.5s;
   }
   .nonactive{
@@ -195,14 +201,33 @@ header{
   /*メイン画面2のスライドここまで*/
 
   /* メイン画面デザイン */
+  header{
+    height:0;
+  }
+  .myface{
+    width:150px;
+    float:none;
+    margin:0 auto;
+   
+    height:20%;
+  }
+  .myinfo{
+    float:none;
+    
+    width:100%;
+  }
   .myname{
     font-size:30px;
   }
   .follow{
-    font-size:15px;
+    font-size:20px;
   }
   .followed{
-    font-size:15px;
+    font-size:20px;
+  }
+  .post,.search,.rank,.delete,.logout{
+    height:12%;
+    font-size:40px;
   }
   /* メイン画面デザインここまで */
 }
