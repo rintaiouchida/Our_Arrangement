@@ -69,11 +69,10 @@ button > span{
 .container2{
   background-color:#f0ece8;
   height:100vh;
-  width:100vw;
+  width:60vw;
   position:fixed;
   top:0;
-  left:-100vw;
-  
+  left:-60vw;
 }
 header{
   height:7%;
@@ -91,7 +90,6 @@ header{
   float:left;
 }
 .myname{
- 
   width:100%;
   height:50%;
   text-align:center;
@@ -105,7 +103,6 @@ header{
   float:right;
 }
 .follow{
-
   float:left;
   width:50%;
   height:100%;
@@ -166,10 +163,47 @@ header{
 
 
 .active{
-  transform:translateX(100vw);
+  transform:translateX(60vw);
   transition:0.5s;
 }
 .nonactive{
   transform:translateX(0);
   transition:0.5s;
 }
+
+/*スマホ用*/
+@media screen and (max-width:600px){
+  /*メイン画面2のスライド*/
+  .container2{
+    background-color:#f0ece8;
+    height:100vh;
+    width:100vw;
+    position:fixed;
+    top:0;
+    left:-100vw;
+  }
+
+  .active{
+    transform:translateX(100vw);
+    transition:0.5s;
+  }
+  .nonactive{
+    transform:translateX(0);
+    transition:0.5s;
+  }
+  /*メイン画面2のスライドここまで*/
+
+  /* メイン画面デザイン */
+  .myname{
+    font-size:30px;
+  }
+  .follow{
+    font-size:15px;
+  }
+  .followed{
+    font-size:15px;
+  }
+  /* メイン画面デザインここまで */
+}
+/*スマホ用ここまで*/
+
