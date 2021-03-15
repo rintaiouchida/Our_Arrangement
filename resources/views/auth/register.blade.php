@@ -96,12 +96,16 @@
 
                         
 
-                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-3">
-                                <button type="submit" class="btn btn-primary col-md-3">
+                         <div class="form-group row col-sm-12 col-12 mb-0">
+                           
+                            <div class="col-sm-4 col-4">
+                                <button type="submit" class="btn btn-primary">
                                     {{ __('登録') }}
                                 </button>
-                                <a class="btn btn-danger col-md-3 offset-md-3" href="/">戻る</a>
+                            </div>
+                            <div class="col-sm-4 col-4"></div>
+                            <div class="col-sm-4 col-4" >
+                                <a class="btn btn-danger"  href="/">戻る</a>
                             </div>
                         </div>
                     </form>
