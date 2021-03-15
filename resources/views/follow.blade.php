@@ -123,6 +123,7 @@
           margin:30px 0;
           font-size:10px;
           line-height:30px;
+          width:100px;
       }
     }
     
