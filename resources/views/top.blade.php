@@ -46,7 +46,7 @@
             
             .content {
                 text-align: center;
-                width:100%;
+                width:100vw;
             }
 
             .title {
