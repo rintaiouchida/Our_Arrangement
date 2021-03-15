@@ -42,7 +42,7 @@
   <div class="container2" id="container2">
     <header></header>
     <div class="myface">
-      <img src="{{Auth::user()->picture}}" style="border:5px solid white; display:inline-block;width:100%;height:90%; border-radius:20%;">
+      <img src="{{Auth::user()->picture}}" style="border:5px solid white; display:inline-block;width:80%;height:90%; border-radius:20%;">
      
     </div>
     <div class="myinfo">
