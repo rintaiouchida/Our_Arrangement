@@ -86,6 +86,11 @@
                 padding-top:5px;
             }
             
+            @media screen and (max-width:540px){
+                .title{
+                    font-size:60px;
+                }
+            }
             
         </style>
     </head>
