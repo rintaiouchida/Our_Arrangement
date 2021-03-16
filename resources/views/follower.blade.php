@@ -133,7 +133,7 @@
   <header>
   <div class="top col-sm-12 col-12 row">
   <a href="/main" class="btn btn-primary btn_back col-sm-2 col-2">戻る</a>
-  <span class="col-sm-6 offset-sm-1 col-6 offset-1 title">フォロワーリスト</span>
+  <span class="col-sm-8 offset-sm-1 col-8 offset-1 title">フォロワーリスト</span>
   </div>
   
   </header>
