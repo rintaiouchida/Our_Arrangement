@@ -72,7 +72,7 @@ class RegisterController extends Controller
             $picture=Storage::disk('s3')->url($path);
         }
         else{
-            $picture=null;
+            $picture='https://uchidamyfirst.s3.ap-northeast-1.amazonaws.com/test/pC9sHZzPYbhCvKSdX9dwWb0YGd4DlDa6zrwEH4Be.png';
         }
         return User::create([
             'name' => $data['name'],

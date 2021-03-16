@@ -41,7 +41,7 @@ class PostController extends Controller
             $picture=Storage::disk('s3')->url($path);
         }
         else{
-            $picture=null;
+            $picture='https://uchidamyfirst.s3.ap-northeast-1.amazonaws.com/test/pC9sHZzPYbhCvKSdX9dwWb0YGd4DlDa6zrwEH4Be.png';
         }
         $post->name=$request['name'];
         $post->user_id=Auth::id();
@@ -69,7 +69,7 @@ class PostController extends Controller
             $picture=Storage::disk('s3')->url($path);
         }      
         else{
-            $picture=null;
+            $picture='https://uchidamyfirst.s3.ap-northeast-1.amazonaws.com/test/pC9sHZzPYbhCvKSdX9dwWb0YGd4DlDa6zrwEH4Be.png';
         }
         $step->picture=$picture;
         $step->save();

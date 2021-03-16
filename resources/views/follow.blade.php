@@ -8,6 +8,9 @@
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <style>
   
+  body{
+    position:relative;
+  }
 
   header{
     position:relative;
@@ -89,9 +92,19 @@
     }
 
     footer{
-      height:1000px;
+      height:50px;
+      position:fixed;
+      bottom:0;
+      left:0;
       width:100%;
-      background-color:white;
+      z-index:0;
+      background-color:yellow;
+    }
+    .btn-to-top{
+      position:fixed;
+      bottom:5px;
+      left:0;
+      z-index:1;
     }
     @media screen and (max-width:540px){
       .title{
@@ -119,23 +132,28 @@
         text-align:center;
      }
 
-        .btn_follow{
+      .btn_follow{
           margin:30px 0;
           font-size:10px;
           line-height:30px;
           width:100px;
+      }
+      .btn-to-top{
+        
+        left:40%;
+  
       }
     }
     
   </style>
 </head>
 <body>
+  <div id="jump"></div>
   <header>
-  <div class="top col-md-12 col-sm-12 col-xs-12">
-  <a href="/main" class="btn btn-primary btn_back">戻る</a>
-  <span class="col-md-4 offset-2 title">フォローリスト</span>
-  </div>
-  
+    <div class="top col-md-12 col-sm-12 col-xs-12">
+      <a href="/main" class="btn btn-primary btn_back">戻る</a>
+      <span class="col-md-4 offset-2 title" >フォローリスト</span>
+    </div>
   </header>
 
   <main>
@@ -159,9 +177,12 @@
 
     @endforeach
   </main>
-
+  
   <footer>
-</footer>
+  </footer>
+  <div class="btn-to-top">
+    <a class="btn btn-primary" href="#jump">ページのTopへ</a>
+  </div>
   
 </body>
 </html>
