@@ -11,7 +11,7 @@
 <body>
 <div class="container col-sm-12 rcol-12 ow">
     <div class="btn">
-      <a class="btn btn-danger col-sm-2 col-2" href="/main" style="position:fixed; top:0; left:0; ">戻る</a>
+      <a class="btn btn-danger col-sm-2 col-2" href="/search" style="position:fixed; top:0; left:0; ">戻る</a>
     </div>
     <div class="btn2">
       <a class="btn btn-primary col-sm-2 col-3" href="#jump">ページのTopへ</a>

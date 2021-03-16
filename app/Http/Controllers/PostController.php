@@ -46,7 +46,16 @@ class PostController extends Controller
         $post->name=$request['name'];
         $post->user_id=Auth::id();
         $post->genre_id=$request['genre'];
-        $post->material=$request['material'];
+        $post->material='';
+        $i=0;
+       
+ 
+        while(!empty($request['material'.$i])){
+            $post->material.='・'.$request['material'.$i].'<br>';
+            $i++;
+        }
+       // dd($post->material);
+        // $post->material=$request['material'];
         $post->icon_picture=$picture;
       
         $post->arrange_origin=$request['arrange_origin'];

@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -34,7 +33,7 @@
                                 <input id="picture" type="file" class="form-control-file @error('picture') is-invalid @enderror" name="picture" value="{{ old('picture') }}"  autocomplete="picture" accept=".png, .jpg, .jpeg, .pdf, .doc">
                                 @error('picture')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>{{ $message}}</strong>
                                     </span>
                                 @enderror
                             </div>
@@ -43,16 +42,17 @@
 
                         <!-- 材料 -->
                         <div class="form-group row">
-                            <label for="material" class="col-md-4 col-form-label text-md-right">{{ __('材料') }}</label>
+                            <label for="material" class="col-md-4 col-form-label text-md-right">{{ __('材料') }}<span class="btn btn-primary" style="margin-left:50px;" id="btn_plus">+</span>
+                            <span class="btn btn-danger" style="margin-left:50px;" id="btn_minus">-</span></label>
 
-                            <div class="col-md-6">
-                                <textarea id="material"  class="form-control @error('material') is-invalid @enderror" name="material" value="{{ old('material') }}" required autocomplete="material" autofocus></textarea>
+                            <div class="col-md-6 material-group">
+                                <input id="material"  class="form-control @error('material') is-invalid @enderror" name="material0" value="{{ old('material') }}" placeholder='material0' required autocomplete="material" autofocus>
 
-                                @error('material')
+                                <!-- @error('material')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
+                                @enderror -->
                             </div>
                         </div>
                         <!-- 材料(ここまで) -->
@@ -112,4 +112,26 @@
         </div>
     </div>
 </div>
+<script>
+    let $i=1;
+    $(function(){
+        $('#btn_plus').click(function(){
+            // $('#material').attr('placeholder',);
+
+            $('.material-group').append('<input id="add_material"  class="form-control @error('material') is-invalid @enderror" name="add_material" value="{{ old('material') }}" required autocomplete="material" autofocus>');
+
+            $('#add_material').attr('id',`material${$i}`);
+            $(`#material${$i}`).attr('placeholder',`material${$i}`);
+            $(`#material${$i}`).attr('name',`material${$i}`);
+            $i++;
+        });
+
+        $('#btn_minus').click(function(){
+            if($i>1){
+                $i--;
+                $(`#material${$i}`).remove();
+            }
+        });
+    });
+</script>
 @endsection

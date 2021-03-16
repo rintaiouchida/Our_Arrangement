@@ -109,8 +109,8 @@
   </div>
   <footer>
   </footer>
-  <a class="btn btn-danger btn-to-main" href="/main" >メインへ</a>
-  <a class="btn btn-primary btn-to-top" href="#top" >トップへ</a>
+  <a class="btn btn-danger btn-to-main" href="/main" >メイン画面へ</a>
+  <a class="btn btn-primary btn-to-top" href="#top" >画面のトップへ</a>
   
 </body>
 </html>
