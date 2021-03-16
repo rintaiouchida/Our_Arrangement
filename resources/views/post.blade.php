@@ -42,10 +42,14 @@
 
                         <!-- 材料 -->
                         <div class="form-group row">
-                            <label for="material" class="col-md-4 col-form-label text-md-right">{{ __('材料') }}<span class="btn btn-primary" style="margin-left:50px;" id="btn_plus">+</span>
-                            <span class="btn btn-danger" style="margin-left:50px;" id="btn_minus">-</span></label>
+                                <span class="col-sm-3 col-3"></span>
+                                <span class="btn btn-primary col-sm-3 col-3" id="btn_plus">行を追加</span>
+                                <span class="btn btn-danger col-sm-3  col-3" id="btn_minus">行を削除</span>
+                                <span class="col-sm-3 col-3"></span>
+                        
+                            <label for="material" class="col-md-4 col-form-label text-md-right" style="margin-top:10px;">{{ __('材料') }}</label>
 
-                            <div class="col-md-6 material-group">
+                            <div class="col-md-6 material-group" style="margin-top:10px;">
                                 <input id="material"  class="form-control @error('material') is-invalid @enderror" name="material0" value="{{ old('material') }}" placeholder='material0' required autocomplete="material" autofocus>
 
                                 <!-- @error('material')
