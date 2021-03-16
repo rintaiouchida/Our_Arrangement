@@ -131,9 +131,9 @@
 </head>
 <body>
   <header>
-  <div class="top col-md-12 col-sm-12 col-xs-12">
-  <a href="/main" class="btn btn-primary btn_back">戻る</a>
-  <span class="col-md-4 offset-2 title">フォロワーリスト</span>
+  <div class="top col-sm-12 col-12 row">
+  <a href="/main" class="btn btn-primary btn_back col-sm-2 col-2">戻る</a>
+  <span class="col-sm-6 offset-sm-1 col-6 offset-1 title">フォロワーリスト</span>
   </div>
   
   </header>
