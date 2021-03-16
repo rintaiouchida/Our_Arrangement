@@ -11,7 +11,7 @@
   <style>
   footer{
     height:50px;
-    background-color:white;
+    background-color:#c1c0b9;
     position:fixed;
     bottom:0;
     left:0;
@@ -44,9 +44,9 @@
         <span></span>
       </button>
     </div>
-    <div class="btn2">
+    <!-- <div class="btn2">
       <a class="btn btn-primary" href="#jump">ページのTopへ</a>
-    </div>
+    </div> -->
     <div class="top" id="jump">メイン画面</top>
     <div class="main col-md-12">
       @if(!empty($posts))

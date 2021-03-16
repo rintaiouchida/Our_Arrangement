@@ -10,6 +10,7 @@
   
   body{
     position:relative;
+    background-color:#f0ece8;
   }
 
   header{
@@ -98,7 +99,7 @@
       left:0;
       width:100%;
       z-index:0;
-      background-color:yellow;
+      background-color:#c1c0b9;
     }
     .btn-to-top{
       position:fixed;
@@ -139,9 +140,7 @@
           width:100px;
       }
       .btn-to-top{
-        
         left:40%;
-  
       }
     }
     
@@ -177,7 +176,7 @@
 
     @endforeach
   </main>
-  
+
   <footer>
   </footer>
   <div class="btn-to-top">

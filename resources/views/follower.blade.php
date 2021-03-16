@@ -7,7 +7,10 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <style>
-  
+  body{
+    position:relative;
+    background-color:#f0ece8;
+  }
 
   header{
     position:relative;
@@ -89,9 +92,20 @@
     }
 
     footer{
-      height:1000px;
+      position:fixed;
+      height:50px;
       width:100%;
-      background-color:white;
+      left:0;
+      bottom:0;
+      z-index:0;
+      background-color:#c1c0b9;
+    }
+
+    .btn-to-top{
+      position:fixed;
+      bottom:5px;
+      left:0;
+      z-index:1;
     }
     @media screen and (max-width:540px){
       .title{
@@ -125,11 +139,16 @@
           line-height:30px;
           width:100px;
       }
+
+      .btn-to-top{
+        left:40%;
+      }
     }
     
   </style>
 </head>
 <body>
+  <div id="jump"></div>
   <header>
   <div class="top col-sm-12 col-12 row">
   <a href="/main" class="btn btn-primary btn_back col-sm-2 col-2">戻る</a>
@@ -161,7 +180,10 @@
   </main>
 
   <footer>
-</footer>
+  </footer>
+  <div class="btn-to-top">
+    <a class="btn btn-primary" href="#jump">ページのTopへ</a>
+  </div>
   
 </body>
 </html>
