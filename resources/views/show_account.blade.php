@@ -54,6 +54,7 @@
     }
     .icon>img{
       height:110px;
+      width:110px;
       margin-top:40px;
     }
     .btn_follow{
