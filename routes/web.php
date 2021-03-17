@@ -65,12 +65,8 @@ Route::get('/like_list/{id}','LikeController@show');
 Route::get('/rank',function(){
     return view('search_rank');
 });
-Route::get('/search_rank_genre',function(){
-    return view('search_rank_genre');
-});
+
 Route::get('/search_rank_genre/{id}','LikeController@show_rank_bygenre');
 
-Route::get('/search_rank_age',function(){
-    return view('search_rank_age');
-});
+
 Route::get('/search_rank_age/{id}','LikeController@show_rank_byage');
