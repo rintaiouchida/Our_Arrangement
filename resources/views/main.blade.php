@@ -90,7 +90,7 @@
     </div>
     <div class="clear"></div>
 
-    <div class="post" ><a class="info-btn" href="/post">投稿する</a></div>
+    <div class="post" ><a class="info-btn" href="/post">投稿する---</a></div>
     
     <div class="search"><a class="info-btn" href="/search">検索する</a></div>
 
