@@ -96,7 +96,7 @@
 
     <div class="rank" ><a class="info-btn" href="/rank" >ランキング</a></div>
 
-    <div class="delete"><a class="info-btn" href="/destroy">削除</a></div>
+    <div class="delete"><a class="info-btn" href="/edit">編集する</a></div>
 
     <div class="logout">
       <a class="info-btn" href="{{ route('logout') }}"
@@ -124,6 +124,8 @@
         $i=0;
       }
     });
+
+  
   </script>
 </body>
 </html>

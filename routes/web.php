@@ -24,7 +24,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //アカウント削除
-Route::get('/destroy','userController@destroy');
+Route::get('/destroy','UserController@destroy');
 
 Route::get('/destroy_confirm',function(){
     return view('destroy_confirm');
