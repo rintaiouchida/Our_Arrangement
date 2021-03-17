@@ -14,7 +14,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('タイトル') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" placeholder='(例)○○を用いた激辛カレー' autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -50,7 +50,7 @@
                             <label for="material" class="col-md-4 col-form-label text-md-right" style="margin-top:10px;">{{ __('材料') }}</label>
 
                             <div class="col-md-6 material-group" style="margin-top:10px;">
-                                <input id="material"  class="form-control @error('material') is-invalid @enderror" name="material0" value="{{ old('material') }}" placeholder='material0' required autocomplete="material" autofocus>
+                                <input id="material"  class="form-control @error('material') is-invalid @enderror" name="material0" value="{{ old('material') }}" placeholder='(例)塩大さじ3杯' required autocomplete="material" autofocus>
 
                                 <!-- @error('material')
                                     <span class="invalid-feedback" role="alert">
@@ -66,7 +66,7 @@
                             <label for="arrange_origin" class="col-md-4 col-form-label text-md-right">{{ __('アレンジ元') }}</label>
 
                             <div class="col-md-6">
-                                <input id="arrange_origin" type="text" class="form-control @error('arrange_origin') is-invalid @enderror" name="arrange_origin" value="{{ old('arrange_origin') }}" required autocomplete="arrange_origin" autofocus>
+                                <input id="arrange_origin" type="text" class="form-control @error('arrange_origin') is-invalid @enderror" name="arrange_origin" value="{{ old('arrange_origin') }}" required autocomplete="arrange_origin" placeholder='(例)赤いきつね' autofocus>
 
                                 @error('arrange_origin')
                                     <span class="invalid-feedback" role="alert">
@@ -125,7 +125,7 @@
             $('.material-group').append('<input id="add_material"  class="form-control @error('material') is-invalid @enderror" name="add_material" value="{{ old('material') }}" required autocomplete="material" autofocus>');
 
             $('#add_material').attr('id',`material${$i}`);
-            $(`#material${$i}`).attr('placeholder',`material${$i}`);
+            // $(`#material${$i}`).attr('placeholder',`material${$i}`);
             $(`#material${$i}`).attr('name',`material${$i}`);
             $i++;
         });
