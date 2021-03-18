@@ -70,3 +70,7 @@ Route::get('/search_rank_genre/{id}','LikeController@show_rank_bygenre');
 
 
 Route::get('/search_rank_age/{id}','LikeController@show_rank_byage');
+
+
+//ajax
+Route::post('/ajaxlike', 'PostController@ajaxlike');

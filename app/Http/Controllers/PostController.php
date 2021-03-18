@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Step;
+use App\Models\Like;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -35,7 +36,6 @@ class PostController extends Controller
 
     public function store(Request $request){
         $post =new Post;
-        
         if(!empty($request['picture'])){
             $path=Storage::disk('s3')->putFile('/test', $request['picture'], 'public');
             $picture=Storage::disk('s3')->url($path);
@@ -124,4 +124,17 @@ class PostController extends Controller
         return view('show_search',compact('contacts','search','count'));
         
     }
+
+
+    public function ajax_index(){
+        $data=[];
+        $posts = Post::withCount('likes')->orderBy('created_at', 'desc')->paginate(10);
+        $data = [
+            'posts' => $posts,
+            'like_model'=>$like_model,
+        ];
+        return view('ajax_post_index',compact('data'));
+    }
+
+    
 }

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\Follow;
 use App\Models\Post;
+use App\Models\Like;
 use App\Http\Requests\User\UpdateRequest;
 
 class UserController extends Controller
@@ -67,6 +68,7 @@ class UserController extends Controller
        if(empty($posts)){
            $posts=null;
        }
+       $like_model=new Like;
        
        //dd($posts);
        
@@ -74,7 +76,7 @@ class UserController extends Controller
         //フォローしている人の投稿を取得(ここまで)
       
 
-        return view('main',compact('follow','follower','posts'));
+        return view('main',compact('follow','follower','posts','like_model'));
     }
 
     public function show_account($id){

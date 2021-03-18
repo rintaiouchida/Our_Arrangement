@@ -30,7 +30,7 @@
      <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style="padding:0;">
             <div class="container" >
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="/main">
                     <!-- {{ config('app.name', 'Laravel') }} -->
                     <span class="head-title">OurArrangement</span>
                 </a>
