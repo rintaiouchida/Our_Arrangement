@@ -15,23 +15,23 @@ use App\Http\Requests\User\UpdateRequest;
 class LikeController extends Controller
 {
     //
-    public function create($id){
-        Auth::user()->like()->attach($id);
+    // public function create($id){
+    //     Auth::user()->like()->attach($id);
         //$post=Post::find($id);
         // $likes=$post->like;
         // dd($likes[0]);
         // foreach($likes as $like){
         //     dd($like);
         // }
-        return redirect()->back();
+    //     return redirect()->back();
 
-    }
+    // }
 
-    public function destroy($id){
-        Auth::user()->like()->detach($id);
-        return redirect()->back();
+    // public function destroy($id){
+    //     Auth::user()->like()->detach($id);
+    //     return redirect()->back();
 
-    }
+    // }
 
     public function show($id){
         $post=Post::find($id);

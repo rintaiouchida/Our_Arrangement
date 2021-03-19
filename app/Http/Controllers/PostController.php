@@ -100,7 +100,8 @@ class PostController extends Controller
     public function show($id){
         $post=Post::find($id);
         $steps=$post->step;
-        return view('show_about',compact('steps','post'));
+        $like_model=new Like;
+        return view('show_about',compact('steps','post','like_model'));
     }
 
     public function show_search(Request $request){
@@ -126,15 +127,40 @@ class PostController extends Controller
     }
 
 
-    public function ajax_index(){
-        $data=[];
-        $posts = Post::withCount('likes')->orderBy('created_at', 'desc')->paginate(10);
-        $data = [
-            'posts' => $posts,
-            'like_model'=>$like_model,
-        ];
-        return view('ajax_post_index',compact('data'));
-    }
+    // ajax実験
+    public function ajaxlike(Request $request)
+    {
+        $id = Auth::user()->id;
+        $post_id = $request->post_id;
+        $like = new Like;
+        $post = Post::findOrFail($post_id);
 
+        // 空でない（既にいいねしている）なら
+        if ($like->like_exist($id, $post_id)) {
+            //likesテーブルのレコードを削除
+            $like = Like::where('post_id', $post_id)->where('user_id', $id)->delete();
+        } else {
+            //空（まだ「いいね」していない）ならlikesテーブルに新しいレコードを作成する
+            $like = new Like;
+            $like->post_id = $request->post_id;
+            $like->user_id = Auth::user()->id;
+            $like->save();
+        }
+
+        //loadCountとすればリレーションの数を○○_countという形で取得できる（今回の場合はいいねの総数）
+        $postLikesCount = $post->loadCount('like')->likes_count;
+      
+        //一つの変数にajaxに渡す値をまとめる
+        //今回ぐらい少ない時は別にまとめなくてもいいけど一応。笑
+        $json = [
+            'postLikesCount' => $postLikesCount,
+        ];
+        //下記の記述でajaxに引数の値を返す
+        return response()->json($json);
+       
+        //下記の記述でajaxに引数の値を返す
+        return redirect();
+    }
+    // ajax実験(ここまで)
     
 }

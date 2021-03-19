@@ -16,20 +16,23 @@ class Like extends Model
         {   //reviewsテーブルとのリレーションを定義するreviewメソッド
             return $this->belongsTo(Post::class);
         }
-    //いいねが既にされているかを確認
-    public function like_exist($id, $post_id)
-    {
-        
-     //Likesテーブルのレコードにユーザーidと投稿idが一致するものを取得
 
-        $exist = Like::where('user_id', '=', $id)->where('post_id', '=', $post_id)->get();
+        // ajax実験
+        //いいねが既にされているかを確認
+        public function like_exist($id, $post_id)
+        {
+            
+        //Likesテーブルのレコードにユーザーidと投稿idが一致するものを取得
 
-        // レコード（$exist）が存在するなら
-        if (!$exist->isEmpty()) {
-            return true;
-        } else {
-        // レコード（$exist）が存在しないなら
-            return false;
+            $exist = Like::where('user_id', '=', $id)->where('post_id', '=', $post_id)->get();
+
+            // レコード（$exist）が存在するなら
+            if (!$exist->isEmpty()) {
+                return true;
+            } else {
+            // レコード（$exist）が存在しないなら
+                return false;
+            }
         }
-    }
+        // ajax実験(ここまで)
 }

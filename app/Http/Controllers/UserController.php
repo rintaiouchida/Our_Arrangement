@@ -178,3 +178,4 @@ class UserController extends Controller
         return view('destroy_confirm',compact('confirm'));
     }
 }
+

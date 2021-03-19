@@ -10,6 +10,8 @@
   <link href="{{ asset('css/main.css') }}" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
  
   <style>
   footer{
@@ -63,6 +65,7 @@
       <img src="{{$post->icon_picture}}" style="width:100%; height:100%;display:block;"></img>
       <div class="title">タイトル:{{$post->name}}<br>作成日時:{{$post->created_at}}</div>
       </a>
+      
       @endforeach
       @endif
       
@@ -132,8 +135,12 @@
       }
     });
 
+   
  
   </script>
 
 </body>
 </html>
+
+
+
