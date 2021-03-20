@@ -23,7 +23,7 @@
             .full-height {
                 height: 100vh;
             }
-            
+
             
 
             .flex-center {
@@ -114,7 +114,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Our<br>Arrangement
+                    our<br>Arrangement
                 </div>
 
                 <!-- <div class="links">
