@@ -142,7 +142,7 @@ header{
   text-align:center; 
   font-size:60px;
 }
-.logout{
+.mylist{
   height:14%;
   text-align:center; 
   font-size:60px;
@@ -236,7 +236,7 @@ footer{
   .followed{
     font-size:20px;
   }
-  .post,.search,.rank,.delete,.logout{
+  .post,.search,.rank,.delete,.mylist{
     height:12%;
     font-size:40px;
   }

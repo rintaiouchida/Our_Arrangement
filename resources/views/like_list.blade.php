@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+  
 
   <style>
   
@@ -26,7 +27,7 @@
     z-index:1;
   }
 
-  .title{
+  .head-title{
     font-size:30px;
     color:#2792c3;
     font-weight:bold;
@@ -52,6 +53,11 @@
 
     img{
       border-radius:1px solid black;
+      display:inline-block; line-height:200px; 
+      height:190px; 
+      width:190px; 
+      border-radius:10%; 
+      border:3px solid white;
     }
 
     
@@ -76,44 +82,87 @@
       margin:80px 0;
     }
 
-    .btn_back{
-      height:40px;
-      margin:30px 0;
-      width:100px;
-    }
+    
+    .btn-to-top{
+    position:fixed;
+    bottom:5px;
+    left:100px;
+    z-index:1;
+  }
+  .btn-to-back{
+    position:fixed;
+    bottom:5px;
+    right:100px;
+    z-index:1;
+  }
 
-    footer{
-      height:1000px;
-      width:100%;
-      background-color:white;
+
+
+    @media screen and (max-width:540px){
+      .head-title{
+        font-size:20px;
+      }
+      .menu2{
+        height:100px;
+      }
+      .pic{
+        height:100px;
+      }
+      .pic>a>img{
+        width:100px;
+        height:95px;
+      }
+      .name{
+        height:50px;
+        margin:25px 0;
+        font-size:20px;
+        line-height:50px;
+        text-align:center;
+     }
+     .btn_follow{
+          margin:30px 0;
+          font-size:10px;
+          line-height:30px;
+          width:100px;
+      }
+
+      .btn-to-top{
+        left:50px;
+      }
+      .btn-to-back{
+        right:50px;
+      }
     }
     
   </style>
 </head>
-<body>
+<body style="position:relative;">
   <header>
   <div class="top col-md-12">
-  <a href="/main" class="btn btn-primary btn_back">戻る</a>
-  <span class="col-md-4 offset-2 title">いいね一覧</span>
+  
+  <span class="col-md-4 offset-2 head-title">いいね一覧</span>
   </div>
   
   </header>
 
   <main>
   @foreach($likes as $like)
-    <div class="menu2 col-md-12">
-      <div class="pic col-md-2"><a href="/main/{{$like->id}}"><img src="{{$like->picture}}" style="display:inline-block; line-height:200px; height:190px; width:190px; border-radius:10%; float:left; border:3px solid white;"></a></div>
-      <h1 class="name col-md-6 ">{{$like->name}}</h1>
+    <div class="menu2 row ">
+      <div class="pic col-sm-3 col-3"><a href="/show/{{$like->id}}"><img src="{{$like->picture}}" ></a>
+      </div>
+      <h1 class="name col-sm-6 col-6">{{$like->name}}</h1>
       
-      @if(Auth::user()->follow->contains($like->id))
-        @if($like->id !== Auth::user()->id)
-        <a href="/destroy_follow/{{$like->id}}" class="btn btn-danger btn_follow">フォロー解除</a>
+      <div class="col-sm-3 col-3"> 
+        @if(Auth::user()->follow->contains($like->id))
+          @if($like->id !== Auth::user()->id)
+          <a href="/destroy_follow/{{$like->id}}" class="btn btn-danger btn_follow">フォロー解除</a>
+          @endif
+        @else
+          @if($like->id !== Auth::user()->id)
+          <a href="/add_follow/{{$like->id}}" class="btn btn-primary btn_follow">フォローする</a>
+          @endif
         @endif
-      @else
-        @if($like->id !== Auth::user()->id)
-        <a href="/add_follow/{{$like->id}}" class="btn btn-primary btn_follow">フォローする</a>
-        @endif
-      @endif
+      </div>
       
     </div>
 
@@ -123,6 +172,8 @@
 
   <footer>
 </footer>
+<a class="btn-to-top btn btn-primary col-sm-3 col-4" href="#jump">ページのTopへ</a>
+ <a class="btn-to-back btn btn-danger col-sm-3 col-4" href="/search">戻る</a>
   
 </body>
 </html>

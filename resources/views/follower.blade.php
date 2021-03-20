@@ -61,8 +61,6 @@
       height:190px; 
       width:190px; 
       border-radius:10%;
-     
-
       border:3px solid white;
     }
 
@@ -115,9 +113,7 @@
         width:100px;
         height:95px;
       }
-      .name{
-        font-size:10px;
-      }
+      
 
       .name{
         height:50px;

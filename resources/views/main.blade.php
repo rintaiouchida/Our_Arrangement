@@ -18,7 +18,14 @@
   .btn-to-top{
     position:fixed;
     bottom:5px;
-    left:0;
+    left:100px;
+    z-index:1;
+  }
+
+  .btn-to-logout{
+    position:fixed;
+    bottom:5px;
+    right:100px;
     z-index:1;
   }
 
@@ -28,11 +35,12 @@
 
   @media screen and (max-width:540px){
     .btn-to-top{
-    position:fixed;
-    bottom:5px;
-    left:40%;
-    z-index:1;
-  }
+      left:50px;
+    }
+
+    .btn-to-logout{
+      right:50px;
+    }
   }
   </style>
 </head>
@@ -65,9 +73,12 @@
     </div>
     <footer>
     </footer>
-    <div class="btn-to-top">
-      <a class="btn btn-primary" href="#jump">ページのTopへ</a>
-    </div>
+
+      <a class="btn-to-top btn btn-primary col-sm-3 col-3" href="#jump">ページのTopへ</a>
+      <a class="btn-to-logout btn btn-danger col-sm-3 col-3" href="{{ route('logout') }}"
+      onclick="event.preventDefault();
+      document.getElementById('logout-form').submit();" >ログアウト</a>
+
     
   </div>
   <div class="container2" id="container2">
@@ -99,10 +110,8 @@
 
     <div class="delete"><a class="info-btn" href="/edit">編集する</a></div>
 
-    <div class="logout">
-      <a class="info-btn" href="{{ route('logout') }}"
-        onclick="event.preventDefault();
-        document.getElementById('logout-form').submit();" >ログアウト
+    <div class="mylist">
+      <a class="info-btn" href="#">いいね・投稿一覧
       </a>
     </div>
 
