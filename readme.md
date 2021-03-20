@@ -18,3 +18,14 @@
 3.検索機能を使って投稿したものを確認<br>
 4.他の人をフォロー<br>
 5.フォローした情報がメイン画面に反映される<br>
+
+## 使用技術
+- PHP(>=7.0)<br>
+- Laravel(>=6.0)<br>
+- MySQL<br>
+- JavaScript<br>
+- jQuery<br>
+- Ajax<br>
+- BootStrap<br>
+- s3<br>
+- heroku
