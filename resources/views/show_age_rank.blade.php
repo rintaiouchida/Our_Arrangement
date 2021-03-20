@@ -55,8 +55,8 @@
     <footer>
     </footer>
     
-      <a class="btn-to-top btn btn-primary col-sm-3 col-3" href="#jump">ページのTopへ</a>
-      <a class="btn-to-back btn btn-danger col-sm-3 col-3" href="/rank">戻る</a>
+      <a class="btn-to-top btn btn-primary col-sm-3 col-4" href="#jump">ページのTopへ</a>
+      <a class="btn-to-back btn btn-danger col-sm-3 col-4" href="/rank">戻る</a>
     
     
   </div>
