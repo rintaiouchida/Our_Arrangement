@@ -33,6 +33,6 @@
 ## 使い方
 - https://ourarrangement.herokuapp.com/ にアクセス
 - デモユーザーでログイン
-  -  メールアドレス:'sample@gmail.com'
-  -  パスワード:'5XZ8LvJU'
+  -  メールアドレス:"sample@gmail.com"
+  -  パスワード:"5XZ8LvJU"
 - 左上のボタンを押す
