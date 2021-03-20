@@ -107,6 +107,7 @@
                             <div class="col-sm-4 col-4"></div>
                             <div class="col-sm-4 col-4" >
                                 <a class="btn btn-danger"  href="/">戻る</a>
+                                
                             </div>
                         </div>
                     </form>
