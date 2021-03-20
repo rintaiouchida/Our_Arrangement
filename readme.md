@@ -29,3 +29,6 @@
 - BootStrap<br>
 - s3<br>
 - heroku
+
+##使い方
+- https://ourarrangement.herokuapp.com/にアクセス
