@@ -114,7 +114,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    our<br>Arrangement
+                    our<br>
                 </div>
 
                 <!-- <div class="links">
