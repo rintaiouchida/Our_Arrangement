@@ -74,8 +74,8 @@
     <footer>
     </footer>
 
-      <a class="btn-to-top btn btn-primary col-sm-3 col-3" href="#jump">ページのTopへ</a>
-      <a class="btn-to-logout btn btn-danger col-sm-3 col-3" href="{{ route('logout') }}"
+      <a class="btn-to-top btn btn-primary col-sm-3 col-4" href="#jump">ページのTopへ</a>
+      <a class="btn-to-logout btn btn-danger col-sm-3 col-4" href="{{ route('logout') }}"
       onclick="event.preventDefault();
       document.getElementById('logout-form').submit();" >ログアウト</a>
 
@@ -84,7 +84,7 @@
   <div class="container2" id="container2">
     <header></header>
     <div class="myface">
-      <img src="{{Auth::user()->picture}}" style="border:5px solid white; display:inline-block;width:100%;height:90%; border-radius:20%;">
+      <a href="/auth_post"><img src="{{Auth::user()->picture}}" style="border:5px solid white; display:inline-block;width:100%;height:90%; border-radius:20%;"></a>
      
     </div>
     <div class="myinfo">
@@ -110,10 +110,8 @@
 
     <div class="delete"><a class="info-btn" href="/edit">編集する</a></div>
 
-    <div class="mylist">
-      <a class="info-btn" href="#">いいね・投稿一覧
-      </a>
-    </div>
+    <div class="mylist "><a class="info-btn" href="/auth_like">いいね一覧</a></div>
+
 
      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
       @csrf
