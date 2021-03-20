@@ -31,4 +31,4 @@
 - heroku
 
 ##使い方
-- https://ourarrangement.herokuapp.com/にアクセス
+- https://ourarrangement.herokuapp.com/ にアクセス<br>
