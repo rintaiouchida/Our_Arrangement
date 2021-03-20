@@ -1,4 +1,4 @@
-<p align="center"><img src=" https://uchidamyfirst.s3.ap-northeast-1.amazonaws.com/test/9Kfr2b2Zdh8zpc7X4LQxwXkT1ajVOW1nZLWq5eJW.png" width="400"></p>
+<p align="center"><img src="https://uchidamyfirst.s3.ap-northeast-1.amazonaws.com/test/9Kfr2b2Zdh8zpc7X4LQxwXkT1ajVOW1nZLWq5eJW.png" width="400"></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
