@@ -14,15 +14,7 @@
 
  
   <style>
-  footer{
-    height:50px;
-    background-color:#c1c0b9;
-    position:fixed;
-    bottom:0;
-    left:0;
-    width:100%;
-    z-index:0;
-  }
+
   .btn-to-top{
     position:fixed;
     bottom:5px;

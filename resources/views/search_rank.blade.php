@@ -6,6 +6,7 @@
   <title>Document</title>
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/main.css') }}" rel="stylesheet">
   <style>
   .genre-rank{
     /* position:fixed; */
@@ -43,31 +44,41 @@
     border-radius:10px; 
     text-decoration:none;
   }
+
+  .btn-to-back{
+    position:fixed;
+    z-index:1;
+    bottom:5px;
+    left:40%;
+  }
   </style>
 </head>
-<body style="background-color:#e2dbc6;" >
-  <div class="genre-rank">
-    <h1>ジャンル別ランキング</h1>
-    <div class="row col-sm-12 col-12">
-      <div class="btn-rank col-sm-3   col-10 offset-1"><a class="btn-primary" href="/search_rank_genre/1">ご飯もの</a></div>
-      <div class="btn-rank col-sm-3  col-10 offset-1"><a class="btn-primary" href="/search_rank_genre/2">麺類</a></div>
-      <div class="btn-rank col-sm-3  col-10 offset-1"><a class="btn-primary" href="/search_rank_genre/3">揚げ物</a></div>
-      <div class="btn-rank col-sm-3  col-10 offset-1"><a class="btn-primary" href="/search_rank_genre/4">スープ</a></div>
-      <div class="btn-rank col-sm-3  col-10 offset-1"><a class="btn-primary" href="/search_rank_genre/5">デザート</a></div>
+<body style="background-color:#e2dbc6; position:relative;" >
+    <div class="genre-rank">
+      <h1>ジャンル別ランキング</h1>
+      <div class="row col-sm-12 col-12">
+        <div class="btn-rank col-sm-3   col-10 offset-1"><a class="btn-primary" href="/search_rank_genre/1">ご飯もの</a></div>
+        <div class="btn-rank col-sm-3  col-10 offset-1"><a class="btn-primary" href="/search_rank_genre/2">麺類</a></div>
+        <div class="btn-rank col-sm-3  col-10 offset-1"><a class="btn-primary" href="/search_rank_genre/3">揚げ物</a></div>
+        <div class="btn-rank col-sm-3  col-10 offset-1"><a class="btn-primary" href="/search_rank_genre/4">スープ</a></div>
+        <div class="btn-rank col-sm-3  col-10 offset-1"><a class="btn-primary" href="/search_rank_genre/5">デザート</a></div>
+      </div>
+    </div>
+    <div class="age-rank" style="margin-bottom:50px;">
+      <h1>年齢別ランキング</h1>
+      <div class="row col-sm-12 col-12">
+        <div class="btn-rank col-sm-3   col-10 offset-1"><a class="btn-primary" href="/search_rank_age/1">10代</a></div>
+        <div class="btn-rank col-sm-3  col-10 offset-1"><a class="btn-primary" href="/search_rank_age/2">20代</a></div>
+        <div class="btn-rank col-sm-3  col-10 offset-1"><a class="btn-primary" href="/search_rank_age/3">30代</a></div>
+        <div class="btn-rank col-sm-3  col-10 offset-1"><a class="btn-primary" href="/search_rank_age/4">40代</a></div>
+        <div class="btn-rank col-sm-3  col-10 offset-1"><a class="btn-primary" href="/search_rank_age/5">50代</a></div>
+        <div class="btn-rank col-sm-3  col-10 offset-1"><a class="btn-primary" href="/search_rank_age/6">60代以上</a></div>
+      </div>
     </div>
   </div>
-  <div class="age-rank">
-    <h1>年齢別ランキング</h1>
-    <div class="row col-sm-12 col-12">
-      <div class="btn-rank col-sm-3   col-10 offset-1"><a class="btn-primary" href="/search_rank_age/1">10代</a></div>
-      <div class="btn-rank col-sm-3  col-10 offset-1"><a class="btn-primary" href="/search_rank_age/2">20代</a></div>
-      <div class="btn-rank col-sm-3  col-10 offset-1"><a class="btn-primary" href="/search_rank_age/3">30代</a></div>
-      <div class="btn-rank col-sm-3  col-10 offset-1"><a class="btn-primary" href="/search_rank_age/4">40代</a></div>
-      <div class="btn-rank col-sm-3  col-10 offset-1"><a class="btn-primary" href="/search_rank_age/5">50代</a></div>
-      <div class="btn-rank col-sm-3  col-10 offset-1"><a class="btn-primary" href="/search_rank_age/6">60代以上</a></div>
-    </div>
-  </div>
-  </div>
+  <footer>
+  </footer>
+  <a class="btn-to-back btn btn-danger" href="/main">メイン画面へ</a>
     <!-- <a class="btn btn-primary col-sm-6 offset-sm-3 col-6 offset-3" href="/search_rank_genre">ジャンル別<br>ランキング<br>はこちら</a>
     <a class="btn btn-primary col-sm-6 offset-sm-3 col-6 offset-3" href="/search_rank_age">年齢別<br>ランキング<br>はこちら</a> -->
 
