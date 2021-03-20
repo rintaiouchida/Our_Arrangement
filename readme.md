@@ -20,19 +20,19 @@
 5.フォローした情報がメイン画面に反映される<br>
 
 ## 使用技術
-- PHP(>=7.0)<br>
-- Laravel(>=6.0)<br>
-- MySQL<br>
-- JavaScript<br>
-- jQuery<br>
-- Ajax<br>
-- BootStrap<br>
-- s3<br>
+- PHP(>=7.0)
+- Laravel(>=6.0)
+- MySQL
+- JavaScript
+- jQuery
+- Ajax
+- BootStrap
+- s3
 - heroku
 
 ## 使い方
-- https://ourarrangement.herokuapp.com/ にアクセス<br>
+- https://ourarrangement.herokuapp.com/ にアクセス
 - デモユーザーでログイン
-  -  メールアドレス:sample@gmail.com
-  -  パスワード:5XZ8LvJU
+  -  メールアドレス:'sample@gmail.com'
+  -  パスワード:'5XZ8LvJU'
 - 左上のボタンを押す
