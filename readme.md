@@ -30,5 +30,9 @@
 - s3<br>
 - heroku
 
-##使い方
+## 使い方
 - https://ourarrangement.herokuapp.com/ にアクセス<br>
+- デモユーザーでログイン
+  -  メールアドレス:sample@gmail.com
+  -  パスワード:5XZ8LvJU
+- 左上のボタンを押す
