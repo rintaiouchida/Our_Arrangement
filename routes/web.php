@@ -74,3 +74,7 @@ Route::get('/search_rank_age/{id}','LikeController@show_rank_byage');
 
 //ajax
 Route::post('/ajaxlike', 'PostController@ajaxlike');
+
+//ユーザー情報
+Route::get('/show_auth_like', 'PostController@show_auth_like');
+Route::get('/show_auth_post', 'PostController@show_auth_post');

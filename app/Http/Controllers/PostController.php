@@ -126,6 +126,15 @@ class PostController extends Controller
         
     }
 
+    public function show_auth_like(){
+        $user=User::find(Auth::id());
+    }
+    public function show_auth_post(){
+        $user=User::find(Auth::id());
+        $posts=Post::where('user_id',$user->id)->get()->sortByDesc('created_at');
+        return view('auth_post',compact('posts','user'));
+    }
+
 
     // ajax実験
     public function ajaxlike(Request $request)
