@@ -8,28 +8,26 @@
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <link href="{{ asset('css/main.css') }}" rel="stylesheet">
   <style>
-    footer{
-    height:50px;
-    background-color:#c1c0b9;
-    position:fixed;
-    bottom:0;
-    left:0;
-    width:100%;
-    z-index:0;
-  }
+   
   .btn-to-top{
     position:fixed;
     bottom:5px;
-    left:0;
+    left:100px;
+    z-index:1;
+  }
+  .btn-to-back{
+    position:fixed;
+    bottom:5px;
+    right:100px;
     z-index:1;
   }
 
   @media screen and (max-width:540px){
     .btn-to-top{
-    position:fixed;
-    bottom:5px;
-    left:40%;
-    z-index:1;
+      left:50px;
+    }
+    .btn-to-back{
+      right:50px;
     }
   }
   </style>
@@ -56,9 +54,10 @@
     </div>
     <footer>
     </footer>
-    <div class="btn-to-top">
-      <a class="btn btn-primary" href="#jump">ページのTopへ</a>
-    </div>
+    
+      <a class="btn-to-top btn btn-primary col-sm-3 col-3" href="#jump">ページのTopへ</a>
+      <a class="btn-to-back btn btn-danger col-sm-3 col-3" href="/rank">戻る</a>
+    
     
   </div>
 </body>
