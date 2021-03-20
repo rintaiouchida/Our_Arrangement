@@ -6,6 +6,7 @@
   <title>Document</title>
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/main.css') }}" rel="stylesheet">
   <style>
   body{
     position:relative;
@@ -27,7 +28,7 @@
     z-index:1;
   }
 
-  .title{
+  .head-title{
     font-size:30px;
     color:#2792c3;
     font-weight:bold;
@@ -85,30 +86,23 @@
       float:right;
     }
 
-    .btn_back{
-      height:40px;
-      margin:30px 0;
-      width:100px;
-    }
-
-    footer{
-      position:fixed;
-      height:50px;
-      width:100%;
-      left:0;
-      bottom:0;
-      z-index:0;
-      background-color:#c1c0b9;
-    }
-
     .btn-to-top{
       position:fixed;
       bottom:5px;
-      left:0;
+      left:100px;
       z-index:1;
     }
+    .btn-to-back{
+      position:fixed;
+      bottom:5px;
+      right:100px;
+      z-index:1;
+    }
+
+  
+    
     @media screen and (max-width:540px){
-      .title{
+      .head-title{
         font-size:20px;
       }
       .menu2{
@@ -132,18 +126,19 @@
         line-height:50px;
         text-align:center;
      }
-
-        .btn_follow{
+     .btn_follow{
           margin:30px 0;
           font-size:10px;
           line-height:30px;
           width:100px;
       }
-
       .btn-to-top{
-        left:40%;
+        left:50px;
       }
-    }
+      .btn-to-back{
+        right:50px;
+      }
+  }
     
   </style>
 </head>
@@ -151,8 +146,8 @@
   <div id="jump"></div>
   <header>
   <div class="top col-sm-12 col-12 row">
-  <a href="/main" class="btn btn-primary btn_back col-sm-2 col-2">戻る</a>
-  <span class="col-sm-8 offset-sm-1 col-8 offset-1 title">フォロワーリスト</span>
+ 
+  <span class="col-sm-8 offset-sm-1 col-8 offset-1 head-title">フォロワーリスト</span>
   </div>
   
   </header>
@@ -181,9 +176,8 @@
 
   <footer>
   </footer>
-  <div class="btn-to-top">
-    <a class="btn btn-primary" href="#jump">ページのTopへ</a>
-  </div>
-  
+  <a class="btn-to-top btn btn-primary col-sm-3 col-4" href="#jump">ページのTopへ</a>
+  <a class="btn-to-back btn btn-danger col-sm-3 col-4" href="/main">戻る</a>
+
 </body>
 </html>

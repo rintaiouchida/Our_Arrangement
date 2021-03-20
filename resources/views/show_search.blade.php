@@ -7,15 +7,36 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+
+  <style>
+  .btn-to-top{
+    position:fixed;
+    bottom:5px;
+    left:100px;
+    z-index:1;
+  }
+  .btn-to-back{
+    position:fixed;
+    bottom:5px;
+    right:100px;
+    z-index:1;
+  }
+
+  @media screen and (max-width:540px){
+    .btn-to-top{
+      left:50px;
+    }
+    .btn-to-back{
+      right:50px;
+    }
+  }
+  </style>
 </head>
 <body>
-<div class="container col-sm-12 rcol-12 ow">
-    <div class="btn">
-      <a class="btn btn-danger col-sm-2 col-2" href="/search" style="position:fixed; top:0; left:0; ">戻る</a>
-    </div>
-    <div class="btn2">
-      <a class="btn btn-primary col-sm-2 col-3" href="#jump">ページのTopへ</a>
-    </div>
+<div class="container col-sm-12 col-12 row" style="position:relative;">
+    
+      
+
     <div class="top" id="jump" style="padding-top:100px;">「{{$search}}」に関する検索結果が{{$count}}件見つかりました。</top>
     <div class="main col-md-12">
       @if(!empty($contacts))
@@ -29,8 +50,10 @@
       @endforeach
       @endif
     </div>
-    
-    
   </div>
+  <footer>
+  </footer>
+  <a class="btn-to-top btn btn-primary col-sm-3 col-4" href="#jump">ページのTopへ</a>
+  <a class="btn-to-back btn btn-danger col-sm-3 col-4" href="/search" >戻る</a>
 </body>
 </html>
