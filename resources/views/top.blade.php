@@ -102,9 +102,9 @@
                 right:50px;
                 z-index:1;
             }
-            .btn-to-register{
-                left:50px;
-            }
+                .btn-to-register{
+                    left:50px;
+                }
             }
             
         </style>
@@ -113,20 +113,10 @@
         <div class="flex-center position-ref full-height">
             <header>
             </header>
-                @if (Route::has('login'))
-                
-                    @auth
-                        <a class="btn-to-main col-sm-3 col-3 btn btn-primary" href="{{ url('/main') }}">mainへ</a>
-                    @else
-                        <a class="btn-to-login col-sm-3 col-3 btn btn-danger" href="{{ route('login') }}">ログイン</a>
-                    @if (Route::has('register'))
-                        <a class="btn-to-register col-sm-3 col-3 btn btn-primary" href="{{ route('register') }}">登録</a>
-                    @endif
-
-                    @endauth
-        
-                @endif
-
+                        <a class="btn-to-login col-sm-3 col-4 btn btn-danger" href="{{ route('login') }}">メイン画面へ</a>
+                        @if (Route::has('register'))
+                        <a class="btn-to-register col-sm-3 col-4 btn btn-primary" href="{{ route('register') }}">登録</a>
+                        @endif
             <div class="content">
                 <div class="title m-b-md">
                     Our<br>Arrangement
