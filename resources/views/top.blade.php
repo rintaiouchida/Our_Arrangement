@@ -130,17 +130,26 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            <header>
-            </header>
-                        <div class="btn-to-login"><a  href="{{ route('login') }}">メイン画面へ</a></div>
-                        @if (Route::has('register'))
-                        <div class="btn-to-register"><a  href="{{ route('register') }}">登録</a></div>
-                        @endif
+            
             <div class="content">
                 <div class="title m-b-md">
                     Our<br>Arrangement
                 </div>
             </div>
+
+            @if (Route::has('login'))
+                <div class="top-right links">
+                    @auth
+                        <a href="{{ url('/main') }}">Home</a>
+                    @else
+                        <a href="{{ route('login') }}">Login</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}">Register</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
         </div>
     </body>
 </html>
