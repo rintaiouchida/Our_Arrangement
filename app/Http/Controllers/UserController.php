@@ -81,7 +81,8 @@ class UserController extends Controller
 
     public function show_account($id){
         $user=User::find($id);
-        return view('show_account',compact('user'));
+        $follow_model=new Follow;
+        return view('show_account',compact('user','follow_model'));
       
     }
 

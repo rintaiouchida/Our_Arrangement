@@ -8,16 +8,27 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
         <!-- Styles -->
         <style>
-            html, body {
+            body {
                 background-color: #fff;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
+                position:relative;
+            }
+            header{
+                position:fixed;
+                background-color:#c1c0b9;
+                height:100px;
+                width:100%;
+                top:0;
+                left:0;
+                z-index:0;
             }
 
             .full-height {
@@ -46,6 +57,7 @@
                 top: 50px;  
             }
             
+            /* タイトル部分 */
             .content {
                 text-align: center;
                 width:100vw;
@@ -55,78 +67,70 @@
                 font-size: 84px;
                 color:#89c3eb;
                 text-shadow:3px 3px white;
-                border-top:5px solid #89c3eb;
-                padding-top:150px;
             }
-
-            .links > a {
-                color: white;
-                padding: 0 25px;
-                font-size: 30px;
-                font-weight: 400;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-            
-
             .m-b-md {
                 margin-bottom: 30px;
             }
 
-            .box{
-                border:5px solid #89c3eb;
-                background-color:#f0ece8;
-                color:#89c3eb;
-                padding:5px;
-                border-radius:5px;
-                box-shadow:2px 5px white;
-            }
+            /* タイトル部分(ここまで) */
 
-            .box:active{
-                box-shadow:none;
-                padding-top:5px;
+            .btn-to-main{
+                position:fixed;
+                top:30px;
+                left:50%;
+                z-index:1;
+            }
+            .btn-to-login{
+                position:fixed;
+                top:30px;
+                right:100px;
+                z-index:1;
+            }
+            .btn-to-register{
+                position:fixed;
+                top:30px;
+                left:100px;
+                z-index:1;
             }
             
             @media screen and (max-width:540px){
                 .title{
                     font-size:60px;
                 }
+
+                .btn-to-login{
+                right:50px;
+                z-index:1;
+            }
+            .btn-to-register{
+                left:50px;
+            }
             }
             
         </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
+            <header>
+            </header>
+                @if (Route::has('login'))
+                
                     @auth
-                        <a href="{{ url('/main') }}">mainへ</a>
+                        <a class="btn-to-main col-sm-3 col-3 btn btn-primary" href="{{ url('/main') }}">mainへ</a>
                     @else
-                        <a href="{{ route('login') }}"><span class="box">ログイン</span></a>
+                        <a class="btn-to-login col-sm-3 col-3 btn btn-danger" href="{{ route('login') }}">ログイン</a>
+                    @if (Route::has('register'))
+                        <a class="btn-to-register col-sm-3 col-3 btn btn-primary" href="{{ route('register') }}">登録</a>
+                    @endif
 
-                        @if (Route::has('register'))
-                        <a href="{{ route('register') }}"><span class="box">登録</span></a>
-                        @endif
                     @endauth
-                </div>
-            @endif
+        
+                @endif
 
             <div class="content">
                 <div class="title m-b-md">
                     Our<br>Arrangement
                 </div>
-
-                <!-- <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div> -->
             </div>
         </div>
     </body>

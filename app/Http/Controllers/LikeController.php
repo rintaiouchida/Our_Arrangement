@@ -35,9 +35,10 @@ class LikeController extends Controller
 
     public function show($id){
         $post=Post::find($id);
+        $follow_model=new Follow;
         $likes=$post->like;
 
-        return view('like_list',compact('likes'));
+        return view('like_list',compact('likes','follow_model'));
         //dd($likes[0]->name);
     }
 

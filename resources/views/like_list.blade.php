@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>Document</title>
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <link href="{{ asset('css/main.css') }}" rel="stylesheet">
-  
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
   <style>
   
@@ -96,6 +98,11 @@
     z-index:1;
   }
 
+  .btn_unfollow{
+    background-color:white;
+    color:blue;
+    border:1px solid black;
+  }
 
 
     @media screen and (max-width:540px){
@@ -153,13 +160,13 @@
       <h1 class="name col-sm-6 col-6">{{$like->name}}</h1>
       
       <div class="col-sm-3 col-3"> 
-        @if(Auth::user()->follow->contains($like->id))
+        @if($follow_model->follow_exist($like->id))
           @if($like->id !== Auth::user()->id)
-          <a href="/destroy_follow/{{$like->id}}" class="btn btn-danger btn_follow">フォロー解除</a>
+          <a href="" class="js-follow-toggle btn btn-primary btn_follow" data-postid="{{$like->id}}">フォロー中</a>
           @endif
         @else
           @if($like->id !== Auth::user()->id)
-          <a href="/add_follow/{{$like->id}}" class="btn btn-primary btn_follow">フォローする</a>
+          <a href="" class="js-follow-toggle btn btn_unfollow btn_follow" data-postid="{{$like->id}}">フォローする</a>
           @endif
         @endif
       </div>
@@ -175,5 +182,53 @@
 <a class="btn-to-top btn btn-primary col-sm-3 col-4" href="#jump">ページのTopへ</a>
  <a class="btn-to-back btn btn-danger col-sm-3 col-4" href="/main">戻る</a>
   
+ <script>
+      // ajax通信
+  $(function(){
+  var like=$('.js-follow-toggle');
+  var likePostId;
+
+  like.on('click',function(){
+    var $this=$(this);
+    likePostId=$this.data('postid');
+
+    $.ajaxSetup({
+      headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+    });
+    
+    $.ajax({
+      url:'/ajaxfollow',
+      type:'POST',
+      data:{
+        'post_id':likePostId,
+      },
+    })
+
+    .done(function(data){
+
+      if($this.context.innerHTML==='フォロー中'){
+        $this.context.innerHTML='フォローする';
+      }
+      else{
+        $this.context.innerHTML='フォロー中';
+      }
+      $this.toggleClass('btn-primary');
+      $this.toggleClass('btn_unfollow');
+    })
+    .fail(function (data, xhr, err){
+      //ここの処理はエラーが出た時にエラー内容をわかるようにしておく。
+      //とりあえず下記のように記述しておけばエラー内容が詳しくわかります。笑
+      console.log(likePostId);
+      console.log(data);
+      console.log(err);
+      console.log(xhr);
+    });
+    return false;
+  });
+});
+  // ajax通信(ここまで)
+    </script>
 </body>
 </html>
