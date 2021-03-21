@@ -121,6 +121,13 @@
                 <div class="title m-b-md">
                     Our<br>Arrangement
                 </div>
+                <div class="row">
+                <a class=" col-sm-3 offset-sm-1 col-4 offset-1 btn btn-danger" href="{{ route('login') }}">メイン画面へ</a>
+                <div class="col-sm-4 col-2"></div>
+                @if (Route::has('register'))
+                <a class=" col-sm-3 offset-sm-1 col-4  btn btn-primary" href="{{ route('register') }}">登録</a>
+                @endif
+                </div>
             </div>
         </div>
     </body>
