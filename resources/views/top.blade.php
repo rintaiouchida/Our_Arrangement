@@ -7,9 +7,6 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
         <!-- Styles -->
         <style>
             body {
@@ -79,19 +76,39 @@
                 top:30px;
                 left:50%;
                 z-index:1;
+                height:60px;
             }
             .btn-to-login{
                 position:fixed;
-                top:30px;
-                right:100px;
+                top:15px;
+                right:150px;
                 z-index:1;
+                background-color:white;
+                height:60px;
+                width:200px;
+                text-align:center;
+                border-radius:5%;
+                border:5px solid blue;
             }
             .btn-to-register{
                 position:fixed;
-                top:30px;
-                left:100px;
+                top:15px;
+                left:150px;
                 z-index:1;
+                background-color:white;
+                height:60px;
+                width:200px;
+                text-align:center;
+                border-radius:5%;
+                border:5px solid blue;
             }
+            .btn-to-login>a,.btn-to-register>a{
+                text-decoration:none;
+                color:black;
+                line-height:60px;
+                font-size:15px;
+                font-weight:bold;
+             }
             
             @media screen and (max-width:540px){
                 .title{
@@ -99,11 +116,13 @@
                 }
 
                 .btn-to-login{
-                right:50px;
+                right:80px;
                 z-index:1;
+                width:120px;
             }
                 .btn-to-register{
-                    left:50px;
+                    left:80px;
+                    width:120px;
                 }
             }
             
@@ -113,20 +132,13 @@
         <div class="flex-center position-ref full-height">
             <header>
             </header>
-                        <a class="btn-to-login col-sm-3 col-4 btn btn-danger" href="{{ route('login') }}">メイン画面へ</a>
+                        <div class="btn-to-login"><a  href="{{ route('login') }}">メイン画面へ</a></div>
                         @if (Route::has('register'))
-                        <a class="btn-to-register col-sm-3 col-4 btn btn-primary" href="{{ route('register') }}">登録</a>
+                        <div class="btn-to-register"><a  href="{{ route('register') }}">登録</a></div>
                         @endif
             <div class="content">
                 <div class="title m-b-md">
                     Our<br>Arrangement
-                </div>
-                <div class="row">
-                <a class=" col-sm-3 offset-sm-1 col-4 offset-1 btn btn-danger" href="{{ route('login') }}">メイン画面へ</a>
-                <div class="col-sm-4 col-2"></div>
-                @if (Route::has('register'))
-                <a class=" col-sm-3 offset-sm-1 col-4  btn btn-primary" href="{{ route('register') }}">登録</a>
-                @endif
                 </div>
             </div>
         </div>
