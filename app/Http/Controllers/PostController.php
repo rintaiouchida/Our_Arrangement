@@ -90,7 +90,7 @@ class PostController extends Controller
             return view('about',compact('id','step_num'));
         }
         else if(isset($request['end'])){
-            return view('top');
+            return view('post_confirm');
             // aaa/
         }
         $id=$step->post_id;
@@ -128,6 +128,8 @@ class PostController extends Controller
 
     public function show_auth_like(){
         $user=User::find(Auth::id());
+        $likes=$user->like->sortByDesc('created_at');
+        return view('auth_like',compact('likes','user'));
     }
     public function show_auth_post(){
         $user=User::find(Auth::id());

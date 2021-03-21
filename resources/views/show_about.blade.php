@@ -107,12 +107,12 @@
     <!-- ajax実験 -->
     @if($like_model->like_exist(Auth::user()->id,$post->id))
       <p class="favorite-marke" style="margin-bottom:50px;">
-        <a class="js-like-toggle  btn btn-primary" href="" data-postid="{{ $post->id }}">参考になった👍</a>
+        <a class="js-like-toggle  btn btn-primary" href="" data-postid="{{ $post->id }}">いいね👍</a>
         <span class="likesCount">{{$post->like_count}}</span>
       </p>
       @else
       <p class="favorite-marke" style="margin-bottom:50px;">
-        <a class="js-like-toggle btn normal" href="" data-postid="{{ $post->id }}">参考になった👍</a>
+        <a class="js-like-toggle btn normal" href="" data-postid="{{ $post->id }}">いいねを押す</a>
         <span class="likesCount">{{$post->like_count}}</span>
       </p>
       @endif​
@@ -122,7 +122,7 @@
   <footer>
   </footer>
   <a class="btn-to-top btn btn-primary col-sm-4 col-4" href="#jump">ページのTopへ</a>
-  <a class="btn-to-back btn btn-danger col-sm-4 col-4" href="/search">戻る</a>
+  <a class="btn-to-back btn btn-danger col-sm-4 col-4" href="/main">戻る</a>
 
 
   <script>
@@ -150,7 +150,13 @@ like.on('click',function(){
     })
 
     .done(function(data){
-      console.log(data);
+
+      if($this.context.innerHTML==='いいねを押す'){
+        $this.context.innerHTML='いいね👍';
+      }
+      else{
+        $this.context.innerHTML='いいねを押す';
+      }
       $this.toggleClass('btn-primary');
       $this.toggleClass('normal');
     })
