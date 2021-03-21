@@ -90,7 +90,10 @@ class PostController extends Controller
             return view('about',compact('id','step_num'));
         }
         else if(isset($request['end'])){
-            return view('post_confirm');
+            $steps=Step::where('post_id',$request['id'])->get();
+            $post=Post::find($request['id']);
+            $step_num=1;
+            return view('post_confirm',compact('post','steps','step_num'));
             // aaa/
         }
         $id=$step->post_id;

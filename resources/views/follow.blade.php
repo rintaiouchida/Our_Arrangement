@@ -7,6 +7,8 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <style>
   
   body{
@@ -177,5 +179,8 @@
   </footer>
     <a class="btn-to-top btn btn-primary col-sm-3 col-4" href="#jump">ページのTopへ</a>
     <a class="btn-to-back btn btn-danger col-sm-3 col-4" href="/main">戻る</a>
+
+    <script>
+    </script>
 </body>
 </html>
