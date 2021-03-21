@@ -11,7 +11,6 @@
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <style>
-  
   body{
     background-color:#e2dbc6;
   }
@@ -131,7 +130,7 @@
   var like=$('.js-like-toggle');
   var likePostId;
 
-like.on('click',function(){
+  like.on('click',function(){
     var $this=$(this);
     likePostId=$this.data('postid');
 

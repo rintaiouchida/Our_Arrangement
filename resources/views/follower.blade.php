@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>Document</title>
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -10,6 +11,7 @@
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <style>
+
   body{
     position:relative;
     background-color:#f0ece8;
@@ -159,10 +161,10 @@
       <p class="name col-sm-6  col-6" >{{$follower->name}}</p>
       
       <div class="col-sm-3 col-3" >
-      @if(Auth::user()->follow->contains($follower->id))
-      <a href="/destroy_follow/{{$follower->id}}" class="btn btn-danger btn_follow">フォロー解除</a>
+      @if($follow_model->follow_exist($follower->id))
+      <a href="" class="js-follow-toggle btn btn-danger btn_follow" data-postid="{{$follower->id}}">フォロー解除</a>
       @else
-      <a href="/add_follow/{{$follower->id}}" class="btn btn-primary btn_follow">フォローする</a>
+      <a href="" class="js-follow-toggle btn btn-primary btn_follow" data-postid="{{$follower->id}}">フォローする</a>
       @endif
       </div>
       
@@ -178,6 +180,50 @@
   <a class="btn-to-back btn btn-danger col-sm-3 col-4" href="/main">戻る</a>
 
   <script>
+  $(function(){
+  var like=$('.js-follow-toggle');
+  var likePostId;
+
+  like.on('click',function(){
+    var $this=$(this);
+    likePostId=$this.data('postid');
+
+    $.ajaxSetup({
+      headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+    });
+    
+    $.ajax({
+      url:'/ajaxfollow',
+      type:'POST',
+      data:{
+        'post_id':likePostId,
+      },
+    })
+
+    .done(function(data){
+
+      if($this.context.innerHTML==='フォローする'){
+        $this.context.innerHTML='フォロー解除';
+      }
+      else{
+        $this.context.innerHTML='フォローする';
+      }
+      $this.toggleClass('btn-primary');
+      $this.toggleClass('btn-danger');
+    })
+    .fail(function (data, xhr, err){
+      //ここの処理はエラーが出た時にエラー内容をわかるようにしておく。
+      //とりあえず下記のように記述しておけばエラー内容が詳しくわかります。笑
+      console.log(likePostId);
+      console.log(data);
+      console.log(err);
+      console.log(xhr);
+    });
+    return false;
+  });
+});
   </script>
 </body>
 </html>

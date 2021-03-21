@@ -17,7 +17,7 @@ class CreateFollowsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedbigInteger('follow_id');
             $table->unsignedbigInteger('followed_id');
-     
+            $table->timestamps();
         });
     }
 
