@@ -128,11 +128,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit_account()
     {
         //
         $contact=Auth::user();
-        return view('edit',compact('contact'));
+        return view('update.edit_account',compact('contact'));
     }
 
     /**
@@ -142,7 +142,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update_account(Request $request)
     {
         //
         

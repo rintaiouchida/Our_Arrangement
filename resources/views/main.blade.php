@@ -110,7 +110,7 @@
 
     <div class="rank" ><a class="info-btn" href="/rank" >ランキング</a></div>
 
-    <div class="delete"><a class="info-btn" href="/edit">編集する</a></div>
+    <div class="delete"><a class="info-btn" href="/edit_account">編集する</a></div>
 
     <div class="mylist "><a class="info-btn" href="/show_auth_like">いいね一覧</a></div>
 

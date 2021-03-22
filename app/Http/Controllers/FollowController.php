@@ -19,7 +19,7 @@ class FollowController extends Controller
         $follow_model=new Follow;
         $follows=$user->follow;
         //dd($follow_users);
-        return view('follow',compact('follows','follow_model'));
+        return view('show.show_follow',compact('follows','follow_model'));
     }
 
     public function follower($id){
@@ -27,7 +27,7 @@ class FollowController extends Controller
         $follow_model=new Follow;
         $followers=$user->followed;
         // dd($follower);
-        return view('follower',compact('followers','follow_model'));
+        return view('show.show_follower',compact('followers','follow_model'));
     }
 
     public function add_follow($id){

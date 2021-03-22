@@ -8,7 +8,7 @@
               <div class="card-header">{{$contact->name}}さんのアカウント内容を編集します。(アイコンとパスワードは未入力の場合は変更されません)</div>
 
               <div class="card-body">
-                  <form method="POST" action="/update" enctype="multipart/form-data">
+                  <form method="POST" action="/update_account" enctype="multipart/form-data">
                     @csrf
                     
                     <div class="form-group row">

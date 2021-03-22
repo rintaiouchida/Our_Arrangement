@@ -31,7 +31,7 @@ class PostController extends Controller
     }
 
     public function post(){
-        return view('post');
+        return view('create.post');
     }
 
     public function store(Request $request){
@@ -63,7 +63,7 @@ class PostController extends Controller
         $step_num=1;
         $id=$post->id;
 
-        return view('about',compact('id','step_num'));
+        return view('create.about',compact('id','step_num'));
 
     }
 

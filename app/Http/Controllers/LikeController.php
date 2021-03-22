@@ -38,7 +38,7 @@ class LikeController extends Controller
         $follow_model=new Follow;
         $likes=$post->like;
 
-        return view('like_list',compact('likes','follow_model'));
+        return view('show.show_like_list',compact('likes','follow_model'));
         //dd($likes[0]->name);
     }
 
