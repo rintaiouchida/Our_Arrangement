@@ -18,7 +18,7 @@ class FollowController extends Controller
         $user=User::find($id);
         $follow_model=new Follow;
         $follows=$user->follow;
-        //dd($follow_users);
+        
         return view('show.show_follow',compact('follows','follow_model'));
     }
 

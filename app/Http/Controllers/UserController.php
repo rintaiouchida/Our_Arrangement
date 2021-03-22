@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
@@ -153,6 +154,15 @@ class UserController extends Controller
     public function update_account(Request $request)
     {
         //
+        $request->validate([
+            'name'=>'max:9',
+            'email'=>['string', 'email', 'max:255'],
+            'password'=> ['nullable','string','min:8','confirmed'],
+            'picture'=>['max:255','file','mimes:jpeg,png'],
+            'birthday'=>['date'],
+        ]);
+        
+
         $contact=Auth::user();
         $contact->name=$request['name'];
         $contact->email=$request['email'];
