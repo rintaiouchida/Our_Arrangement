@@ -147,7 +147,7 @@ class UserController extends Controller
         //
         
         
-        $contact=User::find(1);
+        $contact=Auth::user();
    
         
 
