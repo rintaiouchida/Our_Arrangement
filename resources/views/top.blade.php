@@ -3,7 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <title>Laravel</title>
 
         <!-- Fonts -->
@@ -18,16 +19,7 @@
                 margin: 0;
                 position:relative;
             }
-            header{
-                position:fixed;
-                background-color:#c1c0b9;
-                height:100px;
-                width:100%;
-                top:0;
-                left:0;
-                z-index:0;
-            }
-
+        
             .full-height {
                 height: 100vh;
             }
@@ -36,7 +28,7 @@
 
             .flex-center {
                 align-items: center;
-                display: flex;
+
                 justify-content: center;
                 background-color:#e2dbc6;
             }
@@ -48,11 +40,7 @@
             .position-ref{
                 position:relative;
             }
-            .top-right{
-                position:absolute;
-                right: 10px;
-                top: 50px;  
-            }
+           
             
             /* タイトル部分 */
             .content {
@@ -68,88 +56,44 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            .clear{
+                clear:both;
+            }
 
             /* タイトル部分(ここまで) */
 
-            .btn-to-main{
-                position:fixed;
-                top:30px;
-                left:50%;
-                z-index:1;
-                height:60px;
-            }
-            .btn-to-login{
-                position:fixed;
-                top:15px;
-                right:150px;
-                z-index:1;
-                background-color:white;
-                height:60px;
-                width:200px;
-                text-align:center;
-                border-radius:5%;
-                border:5px solid blue;
-            }
-            .btn-to-register{
-                position:fixed;
-                top:15px;
-                left:150px;
-                z-index:1;
-                background-color:white;
-                height:60px;
-                width:200px;
-                text-align:center;
-                border-radius:5%;
-                border:5px solid blue;
-            }
-            .btn-to-login>a,.btn-to-register>a{
-                text-decoration:none;
-                color:black;
-                line-height:60px;
-                font-size:15px;
-                font-weight:bold;
-             }
-            
+
             @media screen and (max-width:540px){
                 .title{
                     font-size:60px;
-                }
-
-                .btn-to-login{
-                right:80px;
-                z-index:1;
-                width:120px;
-            }
-                .btn-to-register{
-                    left:80px;
-                    width:120px;
                 }
             }
             
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            
-            <div class="content">
-                <div class="title m-b-md">
-                    Our<br>Arrangement
-                </div>
-            </div>
-
+        <div class="flex-center position-ref full-height ">
+          
             @if (Route::has('login'))
-                <div class="top-right links">
+                <div  class="row" style="background-color:yellow; margin-bottom:200px;">
                     @auth
                         <a href="{{ url('/main') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login') }}" class="col-sm-3 col-3">Login</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ route('register') }}" class="col-sm-3 col-3">Register</a>
                         @endif
                     @endauth
                 </div>
             @endif
+
+            <div class="content" >
+                <div class="title m-b-md">
+                    Our<br>Arrangement
+                </div>
+            </div>
+            <div class="clear">
         </div>
     </body>
 </html>
