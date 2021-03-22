@@ -12,11 +12,11 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('名前') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('名前') }}<span class="btn-danger" style="border-radius:10%;">※必須</span></label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" 
-                                placeholder='10文字以内で記入してください。' required autocomplete="name" autofocus>
+                                placeholder='9文字以内で記入してください。' required autocomplete="name" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -27,7 +27,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('メールアドレス') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('メールアドレス') }}<span class="btn-danger" style="border-radius:10%;">※必須</span></label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder='(例)sample@gmail.com' required autocomplete="email">
@@ -41,7 +41,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="picture" class="col-md-4 col-form-label text-md-right">{{ __('アイコン') }}</label>
+                            <label for="picture" class="col-md-4 col-form-label text-md-right">{{ __('アイコン') }}<span class="btn-primary" style="border-radius:10%;">任意</span></label>
 
                             <div class="col-md-6">
                                 <input id="picture" type="file" class="form-control-file @error('picture') is-invalid @enderror" name="picture" value="{{ old('picture') }}"  autocomplete="picture" accept=".png, .jpg, .jpeg, .pdf, .doc">
@@ -55,7 +55,7 @@
 
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('パスワード') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('パスワード') }}<span class="btn-danger" style="border-radius:10%;">※必須</span></label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder='8文字以上で記入してください。' required autocomplete="new-password">
@@ -69,7 +69,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('パスワード(確認)') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('パスワード(確認)') }}<span class="btn-danger" style="border-radius:10%;">※必須</span></label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder='上記と同じパスワードを記入してください。' required autocomplete="new-password">
@@ -80,7 +80,7 @@
 
                         <!-- ここからバースデー -->
                         <div class="form-group row">
-                            <label for="birthday" class="col-md-4 col-form-label text-md-right">{{ __('生年月日') }}</label>
+                            <label for="birthday" class="col-md-4 col-form-label text-md-right">{{ __('生年月日') }}<span class="btn-danger" style="border-radius:10%;">※必須</span></label>
 
                             <div class="col-md-6">
                                 <input id="birthday" type="date" class="form-control @error('birthday') is-invalid @enderror" name="birthday" required autocomplete="birthday">
