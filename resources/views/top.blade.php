@@ -3,8 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+     
         <title>Laravel</title>
 
         <!-- Fonts -->
@@ -60,6 +59,16 @@
                 clear:both;
             }
 
+            .head>a{
+                display:inline-block;
+                text-decoration:none;
+                color:black;
+                line-height:60px;
+            }
+            .head>a:hover{
+                opacity:0.5;
+            }
+
             /* タイトル部分(ここまで) */
 
 
@@ -75,14 +84,14 @@
         <div class="flex-center position-ref full-height ">
           
             @if (Route::has('login'))
-                <div  class="row" style="background-color:yellow; margin-bottom:200px;">
+                <div  class="row head" style="background-color:#c1c0b9;height:60px; margin-bottom:200px;">
                     @auth
                         <a href="{{ url('/main') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}" class="col-sm-3 col-3">Login</a>
+                        <a href="{{ route('login') }}" style="margin-left:50%;  width:100px;">ログイン</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="col-sm-3 col-3">Register</a>
+                            <a href="{{ route('register') }}"style="margin-left:15%;">登録</a>
                         @endif
                     @endauth
                 </div>
