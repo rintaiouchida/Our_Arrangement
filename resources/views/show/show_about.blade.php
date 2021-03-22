@@ -77,13 +77,14 @@
 <body style="position:relative;">
   <!-- container(ここから) -->
   <div class=" container">
-    <div class="head-title row" style="background-color:yellow">
-      <div id="jump"></div>
-      <h1 class="col-sm-12 col-12">タイトル:「{{$post->name}}」</h1>
-     <h1 class="col-sm-12 col-12">created by<a href="/show/{{$post->user->id}}">{{$post->user->name}}</a></h1>
+    <div class="head-title" style="background-color:#00a968; width:100%;">
+      
+      <h1 class="col-sm-12 col-12" id="jump">タイトル:「{{$post->name}}」</h1>
+     <h1 class="col-sm-12 c0l-12">created by<a href="/show/{{$post->user->id}}" style="color:white;text-decoration:none;">{{$post->user->name}}</a></h1>
     </div>
 
-    <a href="/like_list/{{$post->id}}" style="text-align:left; display:block; text-decoration:none; margin-bottom:15px; font-size:20px;">いいね一覧</a>
+   
+    <a href="/like_list/{{$post->id}}" style="text-align:left; display:inline-block; text-decoration:none; margin-bottom:15px; font-size:20px;">いいね一覧</a>
     <div class="card" style="margin-bottom:100px;">
       <div class="card-header">材料</div>
       <div class="card-body row col-sm-12 col-12">

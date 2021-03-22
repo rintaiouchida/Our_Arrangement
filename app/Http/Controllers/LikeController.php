@@ -55,7 +55,7 @@ class LikeController extends Controller
         }
         $ranks=$flies->sortByDesc('like_count');
        
-        return view('show_genre_rank',compact('ranks','rank_num'));
+        return view('show.show_genre_rank',compact('ranks','rank_num'));
     }
 
     public function show_rank_byage($id){
@@ -107,7 +107,7 @@ class LikeController extends Controller
 
         if(empty($ranks)){$ranks=null;};
 
-        return view('show_age_rank',compact('ranks','rank_num'));
+        return view('show.show_age_rank',compact('ranks','rank_num'));
     }
 }
 

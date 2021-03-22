@@ -84,7 +84,7 @@ class UserController extends Controller
     public function show_account($id){
         $user=User::find($id);
         $follow_model=new Follow;
-        return view('show_account',compact('user','follow_model'));
+        return view('show.show_account',compact('user','follow_model'));
       
     }
 
@@ -166,7 +166,7 @@ class UserController extends Controller
         $contact->birthday=$request['birthday'];
         
         $contact->save();
-        return view('/update_confirm',compact('contact'));
+        return view('update_confirm',compact('contact'));
     }
 
     /**

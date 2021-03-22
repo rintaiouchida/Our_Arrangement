@@ -19,6 +19,7 @@
     width:100%;
     height:100px;
     margin-bottom:20px;
+    text-align:center;
   }
   .top{
     position:fixed;
@@ -145,9 +146,10 @@
 </head>
 <body style="position:relative;">
   <header>
-  <div class="top col-md-12">
+  <div class="top" >
   
-  <span class="col-md-4 offset-2 head-title">いいね一覧</span>
+  <span class="head-title" style="color:#89c3eb;
+    text-shadow:1px 1px white; font-size:40px;">いいね一覧</span>
   </div>
   
   </header>

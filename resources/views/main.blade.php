@@ -14,7 +14,8 @@
 
  
   <style>
-
+  
+  
   .btn-to-top{
     position:fixed;
     bottom:5px;
@@ -48,10 +49,10 @@
 <!-- style="margin:0; position:relative;" -->
   <div class="container col-md-12">
     <div class="btn">
-      <button  id="btn">
-        <span></span>
-        <span></span>
-        <span></span>
+      <button  id="btn" class="click btn-active0">
+        <span class="border1"></span>
+        <span class="border2"></span>
+        <span class="border3"></span>
       </button>
     </div>
     <!-- <div class="btn2">

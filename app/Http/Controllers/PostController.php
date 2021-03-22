@@ -27,7 +27,7 @@ class PostController extends Controller
 
       
       
-       return view('show',compact('post'));
+       return view('show.show',compact('post'));
     }
 
     public function post(){
@@ -104,7 +104,7 @@ class PostController extends Controller
         $post=Post::find($id);
         $steps=$post->step;
         $like_model=new Like;
-        return view('show_about',compact('steps','post','like_model'));
+        return view('show.show_about',compact('steps','post','like_model'));
     }
 
     public function show_search(Request $request){
@@ -126,7 +126,7 @@ class PostController extends Controller
         foreach($contacts as $contact){
             $count++;
         }
-        return view('show_search',compact('contacts','search','count'));
+        return view('show.show_search',compact('contacts','search','count'));
         
     }
 
