@@ -53,6 +53,6 @@
   <footer>
   </footer>
   <a class="btn-to-top btn btn-primary col-sm-3 col-4" href="#jump">ページのTopへ</a>
-  <a class="btn-to-back btn btn-danger col-sm-3 col-4" href="/main">戻る</a>
+  <a class="btn-to-back btn btn-danger col-sm-3 col-4" href="/main">メイン画面へ</a>
 </body>
 </html>

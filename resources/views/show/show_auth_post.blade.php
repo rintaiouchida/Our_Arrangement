@@ -31,11 +31,13 @@
       right:50px;
     }
   }
+  
   </style>
 </head>
 <body>
   <div class="container col-12">
-    <div class="top" id="jump">
+    <div class="top" id="jump" style="color:#89c3eb;
+    text-shadow:1px 1px white; font-size:25px;">
       {{$user->name}}さんの投稿一覧
     </div>
     <div class="main col-md-12">
@@ -52,6 +54,6 @@
   <footer>
   </footer>
   <a class="btn-to-top btn btn-primary col-sm-3 col-4" href="#jump">ページのTopへ</a>
-  <a class="btn-to-back btn btn-danger col-sm-3 col-4" href="/main">戻る</a>
+  <a class="btn-to-back btn btn-danger col-sm-3 col-4" href="/main">メイン画面へ</a>
 </body>
 </html>

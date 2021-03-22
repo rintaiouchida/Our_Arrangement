@@ -39,25 +39,27 @@ class LikeController extends Controller
         $likes=$post->like;
 
         return view('show.show_like_list',compact('likes','follow_model'));
-        //dd($likes[0]->name);
     }
 
+    //ジャンルごとにいいね数が多い料理を表示
     public function show_rank_bygenre($id){
         
         $count=0;
         $rank_num=1;
-        $flies=Post::where('genre_id',$id)->get();
-        foreach($flies as $fly){
-            $fly->like_count=$count;
-            foreach($fly->like as $like){
-                $fly->like_count++;
+        $genres=Post::where('genre_id',$id)->get();
+        foreach($genres as $genre){
+            $genre->like_count=$count;
+            foreach($genre->like as $like){
+                $genre->like_count++;
             }$count=0;
         }
-        $ranks=$flies->sortByDesc('like_count');
+        $ranks=$genres->sortByDesc('like_count');
        
         return view('show.show_genre_rank',compact('ranks','rank_num'));
     }
 
+
+    //年代別にいいね数が多い料理をランキング形式で表示
     public function show_rank_byage($id){
         $posts=Post::all();
         $count=0;
@@ -111,4 +113,3 @@ class LikeController extends Controller
     }
 }
 
-// dd(Carbon::parse('1987-02-11')->age);

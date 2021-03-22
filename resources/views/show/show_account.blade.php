@@ -153,7 +153,7 @@
 
     .done(function(data){
 
-      if($this.context.innerHTML==='フォロ中'){
+      if($this.context.innerHTML==='フォロー中'){
         $this.context.innerHTML='フォローする';
       }
       else{

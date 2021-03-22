@@ -12,7 +12,7 @@ use App\Http\Requests\User\UpdateRequest;
 
 class FollowController extends Controller
 {
-    //
+    //フォローを表示
     public function follow($id){
 
         $user=User::find($id);
@@ -22,6 +22,7 @@ class FollowController extends Controller
         return view('show.show_follow',compact('follows','follow_model'));
     }
 
+    //フォロワーを表示
     public function follower($id){
         $user=User::find($id);
         $follow_model=new Follow;
@@ -30,26 +31,15 @@ class FollowController extends Controller
         return view('show.show_follower',compact('followers','follow_model'));
     }
 
-    public function add_follow($id){
-        Auth::user()->follow()->attach($id);
-        return redirect()->back();
-    }
+   
 
-
-    public function destroy_follow($id){
-        Auth::user()->follow()->detach($id);
-        return redirect()->back(); 
-    }
-
+    //ajaxを用いてフォロー、フォロー解除を行う
     public function ajaxfollow(Request $request)
     {
         $id = Auth::user()->id;
         $post_id = $request->post_id;
         $follow = new Follow;
-
-        // 空でない（既にいいねしている）なら
         if ($follow->follow_exist($post_id)) {
-            //likesテーブルのレコードを削除
             $follow = Follow::where('follow_id', $post_id)->where('followed_id', $id)->delete();
         } else {
             //空
@@ -58,16 +48,8 @@ class FollowController extends Controller
             $follow->followed_id = Auth::user()->id;
             $follow->save();
         }
-
-        //一つの変数にajaxに渡す値をまとめる
-        //今回ぐらい少ない時は別にまとめなくてもいいけど一応。笑
-       
-        //下記の記述でajaxに引数の値を返す
         return response()->json();
-       
-        //下記の記述でajaxに引数の値を返す
-        return redirect();
     }
-    // ajax実験(ここまで)
+    // ajax(ここまで)
 }
 

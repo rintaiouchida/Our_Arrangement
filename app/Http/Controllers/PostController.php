@@ -23,17 +23,15 @@ class PostController extends Controller
             $i++;
         }$i=0;
         $post=Post::find($arrs);
-     
-
-      
-      
        return view('show.show',compact('post'));
     }
 
+    //料理の登録画面に遷移
     public function post(){
         return view('create.post');
     }
 
+    //料理の主な内容を登録
     public function store(Request $request){
         $post =new Post;
         if(!empty($request['picture'])){
@@ -54,8 +52,6 @@ class PostController extends Controller
             $post->material.='・'.$request['material'.$i].'<br>';
             $i++;
         }
-       // dd($post->material);
-        // $post->material=$request['material'];
         $post->icon_picture=$picture;
       
         $post->arrange_origin=$request['arrange_origin'];
@@ -67,6 +63,7 @@ class PostController extends Controller
 
     }
 
+    //料理の手順を登録
     public function store_about(Request $request){
         $step =new Step;
         $step->post_id=$request['id'];
@@ -100,13 +97,14 @@ class PostController extends Controller
         dd($id);
     }
 
+    //投稿の詳細を表示
     public function show($id){
         $post=Post::find($id);
         $steps=$post->step;
         $like_model=new Like;
         return view('show.show_about',compact('steps','post','like_model'));
     }
-
+    //検索結果を表示
     public function show_search(Request $request){
 
         $query=DB::table('posts');
@@ -120,21 +118,22 @@ class PostController extends Controller
             $query->where('name','like','%'.$value.'%');
         }
        
-
         $query->orderBy('created_at','asc');
         $contacts=$query->paginate(20);
         foreach($contacts as $contact){
             $count++;
         }
         return view('show.show_search',compact('contacts','search','count'));
-        
     }
 
+    //ログインユーザーのいいねを表示
     public function show_auth_like(){
         $user=User::find(Auth::id());
         $likes=$user->like->sortByDesc('created_at');
         return view('show.show_auth_like',compact('likes','user'));
     }
+
+    //ログインユーザーの投稿を表示
     public function show_auth_post(){
         $user=User::find(Auth::id());
         $posts=Post::where('user_id',$user->id)->get()->sortByDesc('created_at');
@@ -142,40 +141,28 @@ class PostController extends Controller
     }
 
 
-    // ajax実験
+    // ajaxを用いていいね実装
     public function ajaxlike(Request $request)
     {
         $id = Auth::user()->id;
         $post_id = $request->post_id;
         $like = new Like;
         $post = Post::findOrFail($post_id);
-
-        // 空でない（既にいいねしている）なら
         if ($like->like_exist($id, $post_id)) {
-            //likesテーブルのレコードを削除
             $like = Like::where('post_id', $post_id)->where('user_id', $id)->delete();
-        } else {
-            //空（まだ「いいね」していない）ならlikesテーブルに新しいレコードを作成する
+        } 
+        else {
             $like = new Like;
             $like->post_id = $request->post_id;
             $like->user_id = Auth::user()->id;
             $like->save();
         }
-
-        //loadCountとすればリレーションの数を○○_countという形で取得できる（今回の場合はいいねの総数）
         $postLikesCount = $post->loadCount('like')->likes_count;
-      
-        //一つの変数にajaxに渡す値をまとめる
-        //今回ぐらい少ない時は別にまとめなくてもいいけど一応。笑
         $json = [
             'postLikesCount' => $postLikesCount,
         ];
-        //下記の記述でajaxに引数の値を返す
         return response()->json($json);
-       
-        //下記の記述でajaxに引数の値を返す
-        return redirect();
     }
-    // ajax実験(ここまで)
+  
     
 }

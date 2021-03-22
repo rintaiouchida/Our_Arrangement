@@ -50,7 +50,7 @@
         <button type="submit" class="btn btn-primary col-md-3">
         {{ __('検索') }}
         </button>
-        <a class="btn btn-danger col-md-3 offset-md-3" href="/main">戻る</a>
+        <a class="btn btn-danger col-md-3 offset-md-3" href="/main">メイン画面へ</a>
       </div>
      </div>
 

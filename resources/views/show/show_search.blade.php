@@ -38,7 +38,12 @@
 
 
     <div class="top" id="jump" style="padding-top:100px;color:#89c3eb;
-    text-shadow:1px 1px white; font-size:30px;">「{{$search}}」に関する検索結果が{{$count}}件見つかりました。</top>
+    text-shadow:1px 1px white; font-size:30px;">
+    @if(!($count==0))
+    「{{$search}}」に関する検索結果が{{$count}}件見つかりました。
+    @else
+    「{{$search}}」に関する情報は見つかりませんでした。
+    @endif
     <div class="main col-md-12">
       @if(!empty($contacts))
       @foreach($contacts as $contact)
@@ -55,6 +60,6 @@
   <footer>
   </footer>
   <a class="btn-to-top btn btn-primary col-sm-3 col-4" href="#jump">ページのTopへ</a>
-  <a class="btn-to-back btn btn-danger col-sm-3 col-4" href="/main" >戻る</a>
+  <a class="btn-to-back btn btn-danger col-sm-3 col-4" href="/main" >メイン画面へ</a>
 </body>
 </html>

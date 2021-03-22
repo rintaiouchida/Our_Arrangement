@@ -56,9 +56,9 @@ button > span{
   left:20px;
   right:20px;
   bottom:5px;
-  color:red;
-  background-color:yellow;
- 
+  color:white;
+  background-color:#00a968;
+  text-shadow:none;
   font-size:30px;
   opacity:0.8;
 }

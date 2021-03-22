@@ -21,6 +21,8 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     //メイン画面に遷移
     public function index()
     {
         //
@@ -81,6 +83,7 @@ class UserController extends Controller
         return view('main',compact('follow','follower','posts','like_model'));
     }
 
+    //選択したユーザーのアカウント情報を表示
     public function show_account($id){
         $user=User::find($id);
         $follow_model=new Follow;
@@ -128,6 +131,8 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+     //アカウント内容更新画面に遷移
     public function edit_account()
     {
         //
@@ -142,15 +147,13 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
+    //アカウント内容の更新
     public function update_account(Request $request)
     {
         //
-        
-        
         $contact=Auth::user();
-   
-        
-
         $contact->name=$request['name'];
         $contact->email=$request['email'];
 
@@ -177,6 +180,7 @@ class UserController extends Controller
      */
    
 
+    //アカウントを削除
     public function destroy()
     {
         //

@@ -21,63 +21,61 @@ Route::get('/',function(){
 
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 
 //アカウント削除
 Route::get('/destroy','UserController@destroy');
-
 Route::get('/destroy_confirm',function(){
     return view('destroy_confirm');
 });
 
-//アカウント編集
-Route::get('/edit_account','UserController@edit_account');
-Route::post('/update_account','UserController@update_account');
 
 //メイン画面
 Route::get('/main','UserController@index');
 
-//フォロワー表示
-Route::get('/follow/{id}','FollowController@follow');
-Route::get('/follower/{id}','FollowController@follower');
-Route::get('/add_follow/{id}','FollowController@add_follow');
-Route::get('/destroy_follow/{id}','FollowController@destroy_follow');
-
 Route::get('/show','PostController@index');
+Route::get('/menu/{id}','PostController@show');
+
+
+Route::get('/show/{id}','UserController@show_account');
+
+
+
+Route::get('/like_list/{id}','LikeController@show');
+
+
+//料理投稿機能
 Route::get('/post','PostController@post');
 Route::post('/store','PostController@store');
 Route::post('/store_about','PostController@store_about');
-Route::get('/menu/{id}','PostController@show');
 
+//アカウント編集機能
+Route::get('/edit_account','UserController@edit_account');
+Route::post('/update_account','UserController@update_account');
+
+//フォロワー表示機能
+Route::get('/follow/{id}','FollowController@follow');
+Route::get('/follower/{id}','FollowController@follower');
+
+//検索機能
 Route::get('/search',function(){
     return view('search');
 });
 Route::get('/show_search','PostController@show_search');
 
-Route::get('/show/{id}','UserController@show_account');
-
-// Route::get('/like/{id}','LikeController@create');
-// Route::get('/dislike/{id}','LikeController@destroy');
-
-Route::get('/like_list/{id}','LikeController@show');
-
-//Route::get('/rank','LikeController@show_rank');
+//ランキング機能
 Route::get('/rank',function(){
     return view('search_rank');
 });
-
 Route::get('/search_rank_genre/{id}','LikeController@show_rank_bygenre');
-
-
 Route::get('/search_rank_age/{id}','LikeController@show_rank_byage');
 
 
-//ajax
+//ajax機能
 Route::post('/ajaxlike', 'PostController@ajaxlike');
 Route::post('/ajaxfollow', 'FollowController@ajaxfollow');
-//
 
-//ユーザー情報
+
+//ユーザー情報表示機能
 Route::get('/show_auth_like', 'PostController@show_auth_like');
 Route::get('/show_auth_post', 'PostController@show_auth_post');
