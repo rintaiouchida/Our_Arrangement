@@ -85,10 +85,14 @@
 
         <div class="col-sm-12 col-12 btn_follow" style=" text-align:center;">
         @if($follow_model->follow_exist($user->id))
+        @if($user->id !==Auth::id())
         <a href="" class="js-follow-toggle btn btn-primary" data-postid="{{$user->id}}">フォロー中</a>
+        @endif
       
         @else
+        @if($user->id !==Auth::id())
         <a href="" class="js-follow-toggle btn btn_unfollow" data-postid="{{$user->id}}">フォローする</a>
+        @endif
        
         @endif
         </div>

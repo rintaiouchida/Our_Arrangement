@@ -37,7 +37,8 @@
     <!-- <div class="btn2">
       <a class="btn btn-primary" href="#jump">ページのTopへ</a>
     </div> -->
-    <div class="top" id="jump">いいね数ランキング</top>
+    <div class="top" id="jump" style="color:#89c3eb;
+    text-shadow:1px 1px white; font-size:40px;">いいね数ランキング</top>
     <div class="main col-md-12">
       @if(!empty($ranks))
       @foreach($ranks as $rank)
