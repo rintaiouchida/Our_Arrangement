@@ -28,7 +28,8 @@
 <body>
   <div class="container col-md-12">
     <div class="title">
-      <h1>検索画面</h1>
+      <h1 style="color:#89c3eb;
+    text-shadow:1px 1px white; font-size:40px;">検索画面</h1>
     </div>
 
     <form method ="GET" action="/show_search" enctype="multipart/form-data">

@@ -35,9 +35,10 @@
 <body>
 <div class="container col-sm-12 col-12 row" style="position:relative;">
     
-      
 
-    <div class="top" id="jump" style="padding-top:100px;">「{{$search}}」に関する検索結果が{{$count}}件見つかりました。</top>
+
+    <div class="top" id="jump" style="padding-top:100px;color:#89c3eb;
+    text-shadow:1px 1px white; font-size:30px;">「{{$search}}」に関する検索結果が<br>{{$count}}件見つかりました。</top>
     <div class="main col-md-12">
       @if(!empty($contacts))
       @foreach($contacts as $contact)

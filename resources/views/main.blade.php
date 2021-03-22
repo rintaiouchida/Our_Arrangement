@@ -57,7 +57,8 @@
     <!-- <div class="btn2">
       <a class="btn btn-primary" href="#jump">ページのTopへ</a>
     </div> -->
-    <div class="top" id="jump">メイン画面</top>
+    <div class="top" id="jump" style="color:#89c3eb;
+    text-shadow:1px 1px white; font-size:40px;">メイン画面</top>
     <div class="main col-md-12">
       @if(!empty($posts))
       @foreach($posts as $post)
@@ -74,8 +75,8 @@
     <footer>
     </footer>
 
-      <a class="btn-to-top btn btn-primary col-sm-3 col-4" href="#jump">ページのTopへ</a>
-      <a class="btn-to-logout btn btn-danger col-sm-3 col-4" href="{{ route('logout') }}"
+      <a class="btn-to-top btn btn-primary col-sm-3 col-4" style='text-shadow:none;'href="#jump">ページのTopへ</a>
+      <a class="btn-to-logout btn btn-danger col-sm-3 col-4" style='text-shadow:none;' href="{{ route('logout') }}"
       onclick="event.preventDefault();
       document.getElementById('logout-form').submit();" >ログアウト</a>
 

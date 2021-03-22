@@ -145,9 +145,9 @@
 <body>
   <div id="jump"></div>
   <header>
-  <div class="top col-sm-12 col-12 row">
+  <div class="top" style="text-align:center;">
  
-  <span class="col-sm-8 offset-sm-1 col-8 offset-1 head-title">フォロワーリスト</span>
+  <span class="head-title">フォロワーリスト</span>
   </div>
   
   </header>

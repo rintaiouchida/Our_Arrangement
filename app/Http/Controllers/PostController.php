@@ -119,6 +119,7 @@ class PostController extends Controller
         foreach($search_split2 as $value){
             $query->where('name','like','%'.$value.'%');
         }
+       
 
         $query->orderBy('created_at','asc');
         $contacts=$query->paginate(20);

@@ -35,8 +35,9 @@
 </head>
 <body>
   <div class="container col-12">
-    <div class="top" id="jump">
-      {{$user->name}}さんがいいねした投稿一覧
+    <div class="top" id="jump" style="color:#89c3eb;
+    text-shadow:1px 1px white; font-size:25px;">
+      {{$user->name}}さんがいいねした<br>投稿一覧
     </div>
     <div class="main col-md-12">
       @if(!empty($likes))

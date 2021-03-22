@@ -149,8 +149,8 @@
 <body style="position:relative;">
   <div id="jump"></div>
   <header>
-    <div class="top col-md-12 col-sm-12 ">
-      <span class="col-md-4 offset-2 head-title" >フォローリスト</span>
+    <div class="top" style="text-align:center;">
+      <span class=" head-title" >フォローリスト</span>
     </div>
   </header>
 
