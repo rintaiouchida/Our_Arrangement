@@ -62,8 +62,11 @@
             .head>a{
                 display:inline-block;
                 text-decoration:none;
-                color:black;
+                color:#89c3eb;
+                text-shadow:1px 1px white;
                 line-height:60px;
+                font-size:25px;
+                font-weight:bold;
             }
             .head>a:hover{
                 opacity:0.5;
