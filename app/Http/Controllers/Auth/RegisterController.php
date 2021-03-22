@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -66,22 +67,23 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-     
-        if(!empty($data['picture'])){
-            $path=Storage::disk('s3')->putFile('/test', $data['picture'], 'public');
-            $picture=Storage::disk('s3')->url($path);
-        }
-        else{
-            $picture='https://uchidamyfirst.s3.ap-northeast-1.amazonaws.com/test/pC9sHZzPYbhCvKSdX9dwWb0YGd4DlDa6zrwEH4Be.png';
-        }
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            
-            'password' => Hash::make($data['password']),
-            
-            'picture'=>$picture,
-            'birthday'=>$data['birthday'],
-        ]);
+            if(!empty($data['picture'])){
+                $path=Storage::disk('s3')->putFile('/test', $data['picture'], 'public');
+                $picture=Storage::disk('s3')->url($path);
+            }
+            else{
+                $picture='https://uchidamyfirst.s3.ap-northeast-1.amazonaws.com/test/pC9sHZzPYbhCvKSdX9dwWb0YGd4DlDa6zrwEH4Be.png';
+            }
+            return User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                
+                'password' => Hash::make($data['password']),
+                
+                'picture'=>$picture,
+                'birthday'=>$data['birthday'],
+            ]);
+    
     }
+
 }

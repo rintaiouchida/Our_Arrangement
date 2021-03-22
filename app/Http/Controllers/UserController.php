@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
+
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\Follow;
@@ -143,18 +145,25 @@ class UserController extends Controller
     public function update(Request $request)
     {
         //
-        $contact=Auth::user();
+        
+        
+        $contact=User::find(1);
+   
+        
+
+        $contact->name=$request['name'];
+        $contact->email=$request['email'];
+
+        if(!empty($request['password'])){
+            $contact->password=Hash::make($request['passwprd']);
+        }
 
 
-        $contact->name=$request->input('name');
-        $contact->email=$request->input('email');
-        if(!empty($request->input('password'))){
-            $contact->password=Hash::make($request->input('password'));
+        if(!empty($request['picture'])){
+            $path=Storage::disk('s3')->putFile('/test', $request['picture'], 'public');
+            $contact->picture=Storage::disk('s3')->url($path);
         }
-        if(!empty($request->input('picture'))){
-            $contact->picture=$request->input('picture');
-        }
-        $contact->birthday=$request->input('birthday');
+        $contact->birthday=$request['birthday'];
         
         $contact->save();
         return view('/update_confirm',compact('contact'));
