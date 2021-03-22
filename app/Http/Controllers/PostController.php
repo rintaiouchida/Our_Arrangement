@@ -133,12 +133,12 @@ class PostController extends Controller
     public function show_auth_like(){
         $user=User::find(Auth::id());
         $likes=$user->like->sortByDesc('created_at');
-        return view('auth_like',compact('likes','user'));
+        return view('show.show_auth_like',compact('likes','user'));
     }
     public function show_auth_post(){
         $user=User::find(Auth::id());
         $posts=Post::where('user_id',$user->id)->get()->sortByDesc('created_at');
-        return view('auth_post',compact('posts','user'));
+        return view('show.show_auth_post',compact('posts','user'));
     }
 
 

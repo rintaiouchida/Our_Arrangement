@@ -75,7 +75,6 @@ Route::get('/search_rank_age/{id}','LikeController@show_rank_byage');
 
 //ajax
 Route::post('/ajaxlike', 'PostController@ajaxlike');
-
 Route::post('/ajaxfollow', 'FollowController@ajaxfollow');
 //
 
