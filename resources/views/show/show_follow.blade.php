@@ -102,6 +102,12 @@
       right:100px;
       z-index:1;
     }
+    .btn_unfollow{
+     background-color:white;
+     color:blue;
+     border:1px solid black;
+   }
+    
     @media screen and (max-width:540px){
       .head-title{
         font-size:20px;
@@ -164,9 +170,9 @@
       
       <div class="col-sm-3 col-3" >
       @if($follow_model->follow_exist($follow->id))
-      <a href="" class="js-follow-toggle btn btn-danger btn_follow" data-postid="{{$follow->id}}">フォロー解除</a>
+      <a href="" class="js-follow-toggle btn btn-primary btn_follow" data-postid="{{$follow->id}}">フォロー中</a>
       @else
-      <a href="" class="js-follow-toggle btn btn-primary btn_follow" data-postid="{{$follow->id}}">フォローする</a>
+      <a href="" class="js-follow-toggle btn btn_unfollow btn_follow" data-postid="{{$follow->id}}">フォローする</a>
       @endif
       </div>
       
@@ -208,13 +214,13 @@
     .done(function(data){
 
       if($this.context.innerHTML==='フォローする'){
-        $this.context.innerHTML='フォロー解除';
+        $this.context.innerHTML='フォロー中';
       }
       else{
         $this.context.innerHTML='フォローする';
       }
       $this.toggleClass('btn-primary');
-      $this.toggleClass('btn-danger');
+      $this.toggleClass('btn_unfollow');
     })
     .fail(function (data, xhr, err){
       //ここの処理はエラーが出た時にエラー内容をわかるようにしておく。
