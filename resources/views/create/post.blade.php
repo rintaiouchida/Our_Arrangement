@@ -62,7 +62,7 @@
                         <!-- 材料(ここまで) -->
 
                         <!-- アレンジ元設定 -->
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <label for="arrange_origin" class="col-md-4 col-form-label text-md-right">{{ __('アレンジ元') }}</label>
 
                             <div class="col-md-6">
@@ -74,7 +74,7 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+                        </div> -->
                         <!-- アレンジ元設定(ここまで) -->
 
                         <!-- ジャンル設定 -->

@@ -54,7 +54,7 @@ class PostController extends Controller
         }
         $post->icon_picture=$picture;
       
-        $post->arrange_origin=$request['arrange_origin'];
+        //$post->arrange_origin=$request['arrange_origin'];
         $post->save();
         $step_num=1;
         $id=$post->id;
@@ -84,7 +84,7 @@ class PostController extends Controller
             $id=$request['id'];
             // dd($request['step_num']);
             $step_num=$request['step_num']+1;
-            return view('about',compact('id','step_num'));
+            return view('create.about',compact('id','step_num'));
         }
         else if(isset($request['end'])){
             $steps=Step::where('post_id',$request['id'])->get();

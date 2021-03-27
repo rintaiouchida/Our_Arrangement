@@ -20,7 +20,7 @@ class CreatePostsTable extends Migration
             $table->unsignedbigInteger('genre_id');
             $table->string('material');
             $table->string('icon_picture')->nullable();
-            $table->string('arrange_origin');
+            // $table->string('arrange_origin');
             $table->timestamps();
         });
     }

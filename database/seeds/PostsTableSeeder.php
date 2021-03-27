@@ -21,7 +21,7 @@ class PostsTableSeeder extends Seeder
             'genre_id'=>3,
             'material'=>'豆腐',
             'icon_picture'=>'https://uchidamyfirst.s3.ap-northeast-1.amazonaws.com/test/ktJGBUthH6GooHekRJoq0iq4PrbLfo9LHdiUvuvb.jpg',
-            'arrange'.'_origin'=>'豆腐',
+            // 'arrange'.'_origin'=>'豆腐',
             'created_at'=>'1998-03-11',
             ],
             [
@@ -33,7 +33,7 @@ class PostsTableSeeder extends Seeder
             ・卵
             ・パン粉',
             'icon_picture'=>'https://uchidamyfirst.s3.ap-northeast-1.amazonaws.com/test/9uCMvUI81I1qAPR1iPZRyJRsGqkdN5AQihPCf0IC.png',
-            'arrange'.'_origin'=>'ペヤング',
+            // 'arrange'.'_origin'=>'ペヤング',
             'created_at'=>'1998-03-11',
 
             ],
